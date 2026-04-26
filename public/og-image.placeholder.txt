@@ -1,0 +1,9 @@
+Replace this file with og-image.png (1200 x 630 px).
+
+Suggested composition:
+- Cream background (#f7f3ec)
+- Title in Fraunces serif: "Artificial Intelligence for Nonprofit Fundraising" (italic light on the first two words)
+- Subtitle: "How to Use AI to Raise More Money, Ethically and Effectively"
+- Author line, small caps: "Dale Nirvani Pfeifer"
+- One thin gold rule (#b08a3e) above the author line
+- No imagery. Type only. Editorial.
