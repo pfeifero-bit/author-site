@@ -4,11 +4,14 @@ import { BookDescription } from '@/components/sections/BookDescription';
 import { WhoItsFor } from '@/components/sections/WhoItsFor';
 import { TableOfContents } from '@/components/sections/TableOfContents';
 import { SampleChapter } from '@/components/sections/SampleChapter';
+import { Endorsement } from '@/components/sections/Endorsement';
 import { RetailerStrip } from '@/components/sections/RetailerStrip';
 import { site } from '@/lib/site';
 
-// BookEndorsements is hidden for now. To restore, re-import it and add
-// <BookEndorsements /> between SampleChapter and RetailerStrip.
+// BookEndorsements (the larger section with the placeholder grid for
+// forthcoming endorsements) is intentionally not used here. Just the
+// Meena Das foreword pull-quote via Endorsement. To restore the full
+// section, swap Endorsement for BookEndorsements below.
 
 export const metadata: Metadata = {
   title: 'The Book',
@@ -29,6 +32,7 @@ export default function BookPage() {
       <WhoItsFor />
       <TableOfContents />
       <SampleChapter />
+      <Endorsement />
       <RetailerStrip />
     </>
   );
