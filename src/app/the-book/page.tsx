@@ -4,9 +4,11 @@ import { BookDescription } from '@/components/sections/BookDescription';
 import { WhoItsFor } from '@/components/sections/WhoItsFor';
 import { TableOfContents } from '@/components/sections/TableOfContents';
 import { SampleChapter } from '@/components/sections/SampleChapter';
-import { BookEndorsements } from '@/components/sections/BookEndorsements';
 import { RetailerStrip } from '@/components/sections/RetailerStrip';
 import { site } from '@/lib/site';
+
+// BookEndorsements is hidden for now. To restore, re-import it and add
+// <BookEndorsements /> between SampleChapter and RetailerStrip.
 
 export const metadata: Metadata = {
   title: 'The Book',
@@ -27,7 +29,6 @@ export default function BookPage() {
       <WhoItsFor />
       <TableOfContents />
       <SampleChapter />
-      <BookEndorsements />
       <RetailerStrip />
     </>
   );
