@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { site } from '@/lib/site';
 import { BookCover } from '@/components/ui/BookCover';
+import { WaitlistButton } from '@/components/site/WaitlistButton';
 
 export function BookHero() {
   return (
@@ -36,13 +37,7 @@ export function BookHero() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <Link
-              href="#retailers"
-              className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream transition hover:bg-ink-700"
-            >
-              Pre-order the book
-              <span aria-hidden>&rarr;</span>
-            </Link>
+            <WaitlistButton size="md" />
             <Link
               href="#sample"
               className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink/60"

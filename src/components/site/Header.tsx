@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { site } from '@/lib/site';
+import { WaitlistButton } from './WaitlistButton';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -46,12 +47,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href="/the-book#preorder"
-            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-cream transition hover:bg-ink-700"
-          >
-            Pre-order
-          </Link>
+          <WaitlistButton size="sm" />
         </div>
 
         <button
@@ -90,14 +86,8 @@ export function Header() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/the-book#preorder"
-                  className="mt-2 inline-flex rounded-full bg-ink px-4 py-2 text-sm font-medium text-cream"
-                  onClick={() => setOpen(false)}
-                >
-                  Pre-order
-                </Link>
+              <li className="mt-2">
+                <WaitlistButton size="sm" />
               </li>
             </ul>
           </nav>
