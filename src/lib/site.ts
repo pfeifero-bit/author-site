@@ -23,7 +23,7 @@ export const site = {
   nav: [
     { href: '/the-book', label: 'The Book' },
     { href: '/about', label: 'About' },
-    { href: '/speaking', label: 'Speaking' },
+    { href: '/about-the-book', label: 'About the Book' },
     { href: '/insights', label: 'Insights' },
     { href: '/contact', label: 'Contact' },
   ],
