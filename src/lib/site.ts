@@ -3,8 +3,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aifundraisingfornonprofits.com',
   bookTitle: 'Artificial Intelligence for Nonprofit Fundraising',
   bookSubtitle: 'How to Use AI to Raise More Money, Ethically and Effectively',
-  publishMonth: 'April 2026',
-  publishDate: '2026-04-15', // placeholder, replace with confirmed date
+  publishMonth: 'June 2026',
+  publishDate: '2026-06-15', // placeholder, replace with confirmed date
   description:
     'A practical playbook for nonprofit leaders ready to use AI to raise more, work smarter, and stay deeply human. By Dale Nirvani Pfeifer, CEO of Giving Compass.',
   tagline: 'Use AI to stay human under pressure.',
