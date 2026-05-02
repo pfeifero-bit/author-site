@@ -56,9 +56,6 @@ export function AboutHero() {
               className="object-cover"
             />
           </div>
-          <p className="mt-4 text-center text-[10px] font-semibold uppercase tracking-widest text-ink/65">
-            Replace with high-resolution headshot
-          </p>
         </motion.div>
       </div>
 

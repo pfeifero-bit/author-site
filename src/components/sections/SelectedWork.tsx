@@ -14,9 +14,9 @@ const items: Item[] = [
   {
     kind: 'Essay',
     title: 'Reducing AI Bias: A Path Forward',
-    outlet: 'With Jeff Raikes, former CEO, Gates Foundation',
+    outlet: 'Fidelity Charitable, with Jeff Raikes',
     year: '2024',
-    href: '#',
+    href: 'https://www.fidelitycharitable.org/articles/reducing-ai-bias.html',
   },
   {
     kind: 'Book',
@@ -62,6 +62,8 @@ export function SelectedWork() {
             >
               <a
                 href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="group grid grid-cols-[5rem_1fr_auto] items-baseline gap-6 py-6 text-ink transition hover:bg-ink/[0.02] md:grid-cols-[6rem_1fr_8rem_3rem] md:py-7"
               >
                 <span className="text-xs font-semibold uppercase tracking-widest text-ink/65">
@@ -77,10 +79,6 @@ export function SelectedWork() {
             </motion.li>
           ))}
         </ul>
-
-        <p className="mt-10 text-sm text-ink/70">
-          Replace with verified URLs and add additional press as it lands.
-        </p>
       </div>
     </section>
   );
