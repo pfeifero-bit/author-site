@@ -21,8 +21,7 @@ export function AboutCta() {
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-ink/70">
           The most useful next step depends on where you are. The book is the deepest answer.
-          A keynote is the fastest way to align a team or a board. And the contact form is open
-          for anything else.
+          The contact form is open for everything else.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link
@@ -31,12 +30,6 @@ export function AboutCta() {
           >
             Read the book
             <span aria-hidden>&rarr;</span>
-          </Link>
-          <Link
-            href="/speaking"
-            className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink/60"
-          >
-            Invite Dale to speak
           </Link>
           <Link
             href="/contact"

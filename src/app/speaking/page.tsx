@@ -1,22 +1,13 @@
-import type { Metadata } from 'next';
-import { SpeakingHero } from '@/components/sections/SpeakingHero';
-import { SpeakingTopics } from '@/components/sections/SpeakingTopics';
-import { PastVenues } from '@/components/sections/PastVenues';
-import { SpeakingInquiry } from '@/components/sections/SpeakingInquiry';
+import { notFound } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Speaking',
-  description:
-    'Keynotes and conversations on AI in philanthropy. Topics, formats, past venues, and a speaking inquiry form.',
-};
-
+// Speaking page is hidden for now. The components and content are kept in
+// the codebase (SpeakingHero, SpeakingTopics, PastVenues, SpeakingInquiry)
+// for an easy future restore: remove the notFound() call below and put the
+// nav entry back in src/lib/site.ts.
 export default function SpeakingPage() {
-  return (
-    <>
-      <SpeakingHero />
-      <SpeakingTopics />
-      <PastVenues />
-      <SpeakingInquiry />
-    </>
-  );
+  notFound();
 }
+
+export const metadata = {
+  robots: { index: false, follow: false },
+};
