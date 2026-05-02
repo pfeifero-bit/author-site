@@ -3,10 +3,9 @@ import { BookDescription } from '@/components/sections/BookDescription';
 import { WhoItsFor } from '@/components/sections/WhoItsFor';
 import { TableOfContents } from '@/components/sections/TableOfContents';
 import { SampleChapter } from '@/components/sections/SampleChapter';
-import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
-    title: `About the Book | ${site.name}`,
+        title: 'About the Book | Dale Nirvani Pfeifer',
     description: 'Table of contents, chapter guide, and full breakdown of Artificial Intelligence for Nonprofit Fundraising by Dale Nirvani Pfeifer.',
 };
 
