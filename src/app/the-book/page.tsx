@@ -4,8 +4,11 @@ import { WhoItsFor } from '@/components/sections/WhoItsFor';
 import { TableOfContents } from '@/components/sections/TableOfContents';
 import { SampleChapter } from '@/components/sections/SampleChapter';
 import { Endorsement } from '@/components/sections/Endorsement';
+import { BookFaq } from '@/components/sections/BookFaq';
 import { site } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
+import { buildFaqSchema, jsonLdScript } from '@/lib/jsonLd';
+import { bookFaq } from '@/lib/bookFaq';
 
 // BookEndorsements (the larger section with the placeholder grid for
 // forthcoming endorsements) is intentionally not used here. Just the
@@ -24,15 +27,25 @@ export const metadata = buildMetadata({
   ogType: 'book',
 });
 
+// FAQPage schema. Pulled from the same source as the visible <BookFaq>
+// component so they cannot drift apart. Required by Google's rich-result
+// policy: every Q&A in the schema must also appear in visible content.
+const faqSchema = buildFaqSchema(bookFaq);
+
 export default function BookPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(faqSchema) }}
+      />
       <BookHero />
       <BookDescription />
       <WhoItsFor />
       <TableOfContents />
       <SampleChapter />
       <Endorsement />
+      <BookFaq />
     </>
   );
 }

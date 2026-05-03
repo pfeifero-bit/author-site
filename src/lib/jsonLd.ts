@@ -88,9 +88,33 @@ export function buildBookSchema() {
     },
     audience: {
       '@type': 'Audience',
-      audienceType: 'Fundraisers, development professionals, and nonprofit leaders',
+      audienceType: site.bookAudience,
     },
-    about: site.topics.map((topic) => ({ '@type': 'Thing', name: topic })),
+    about: site.bookTopics.map((topic) => ({ '@type': 'Thing', name: topic })),
+  } as const;
+}
+
+/**
+ * FAQPage schema. Q&A content is cited heavily by AI search — when
+ * someone asks ChatGPT/Perplexity/Claude a question that matches one
+ * of these, the answer is a strong candidate for inclusion in the
+ * response (usually with a link back to the source page).
+ *
+ * Questions and answers are passed in by the caller so the same helper
+ * can power different FAQ surfaces (book page, about page, etc.).
+ */
+export function buildFaqSchema(qa: ReadonlyArray<{ question: string; answer: string }>) {
+  return {
+    '@context': SCHEMA,
+    '@type': 'FAQPage',
+    mainEntity: qa.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
   } as const;
 }
 
