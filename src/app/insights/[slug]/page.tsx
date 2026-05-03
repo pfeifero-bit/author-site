@@ -8,6 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { getAllPosts, getPostBySlug } from '@/lib/posts';
 import { mdxComponents } from '@/components/site/MdxComponents';
 import { site } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
 
 type Params = { slug: string };
 
@@ -18,28 +19,14 @@ export async function generateStaticParams(): Promise<Params[]> {
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
-  const title = `${post.title} | Insights | ${site.author.name}`;
-  const description =
-    post.excerpt ?? `Field note by ${site.author.name} on AI and philanthropy.`;
-  const url = `${site.url}/insights/${post.slug}`;
-  return {
-    title: { absolute: title },
-    description,
-    alternates: { canonical: url },
-    openGraph: {
-      title,
-      description,
-      type: 'article',
-      url,
-      publishedTime: post.date,
-      siteName: site.author.name,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-    },
-  };
+  return buildMetadata({
+    title: `${post.title} | Insights | ${site.author.name}`,
+    description:
+      post.excerpt ?? `Field note by ${site.author.name} on AI and philanthropy.`,
+    url: `${site.url}/insights/${post.slug}`,
+    ogType: 'article',
+    openGraphExtras: { publishedTime: post.date },
+  });
 }
 
 function formatDate(date: string) {

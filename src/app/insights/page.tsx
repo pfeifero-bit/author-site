@@ -1,31 +1,15 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/posts';
 import { TedxTalk } from '@/components/sections/TedxTalk';
 import { site } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
 
-const TITLE = 'Insights | Dale Nirvani Pfeifer';
-const DESCRIPTION =
-  'Field notes on AI and philanthropy. Essays, talks, and selected writing on the future of fundraising.';
-const URL = `${site.url}/insights`;
-
-export const metadata: Metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
-  alternates: { canonical: URL },
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: URL,
-    type: 'website',
-    siteName: site.author.name,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
-  },
-};
+export const metadata = buildMetadata({
+  title: 'Insights | Dale Nirvani Pfeifer',
+  description:
+    'Field notes on AI and philanthropy. Essays, talks, and selected writing on the future of fundraising.',
+  url: `${site.url}/insights`,
+});
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString('en-US', {
