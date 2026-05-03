@@ -4,24 +4,22 @@ import { site } from '@/lib/site';
 
 export function Footer() {
   return (
-            <footer className="border-t border-ink/10 bg-ink text-cream">
-      <div className="container-prose grid gap-12 py-16 md:grid-cols-2">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-navy">
-            The dispatch
+    <footer className="border-t border-ink/10 bg-ink text-cream">
+      <div className="container-prose grid gap-10 py-12 md:grid-cols-12 md:gap-12">
+        {/* Inline Dispatch signup. No heading per spec — just a small
+            label so users know what list they're subscribing to. The
+            Chapter 1 form already enrolls everyone in this list, so
+            this is the manual opt-in path for repeat visitors. */}
+        <div className="md:col-span-6">
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-accent-on-navy">
+            Subscribe to The Dispatch
           </p>
-          <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl">
-            Field notes on AI and philanthropy.
-          </h2>
-          <p className="mt-3 max-w-md text-cream/70">
-            One thoughtful note a month on AI, philanthropy, and the practice of fundraising. No noise, no spam.
-          </p>
-          <div className="mt-6 max-w-md">
+          <div className="mt-3 max-w-md">
             <EmailCapture source="footer" buttonLabel="Subscribe" />
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 text-sm md:justify-self-end">
+        <div className="grid grid-cols-2 gap-8 text-sm md:col-span-6 md:justify-self-end">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-cream/65">Site</p>
             <ul className="mt-4 space-y-2">
