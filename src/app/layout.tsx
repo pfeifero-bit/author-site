@@ -16,10 +16,9 @@ const mulish = Mulish({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
 });
 
-// TODO: add the OG image at /public/images/og-default.jpg (1200 x 630).
-// Until that file exists, social previews will fall back to whatever each
-// platform shows for a missing image. See public/og-image.placeholder.txt
-// for composition notes. When the file is added, no code changes needed.
+// Site-wide social-share card. Generated typographic OG image at
+// /public/images/og-default.jpg (1200 x 630). Replace if a final
+// designed version is produced.
 const OG_IMAGE = '/images/og-default.jpg';
 
 // Site-wide metadata defaults. Every page MUST set its own title,
@@ -75,7 +74,7 @@ const bookJsonLd = {
   bookFormat: 'https://schema.org/Hardcover',
   inLanguage: 'en',
   datePublished: site.publishDate,
-  publisher: { '@type': 'Organization', name: 'TBD' },
+  publisher: { '@type': 'Person', name: site.author.name },
   url: `${site.url}/the-book`,
 };
 
