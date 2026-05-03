@@ -33,7 +33,15 @@ export default function ThankYouPage() {
           Chapter 1 is on its way.
         </h1>
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-ink/75 md:text-xl">
-          Check your inbox in the next few minutes. While you wait, two things you might enjoy.
+          The PDF is in your inbox now. If it does not appear within a few
+          minutes, check your spam folder or{' '}
+          <Link
+            href="/contact"
+            className="underline decoration-accent-on-cream decoration-1 underline-offset-4 hover:text-ink"
+          >
+            send a quick note
+          </Link>
+          . While you wait, two things you might enjoy.
         </p>
       </section>
 
