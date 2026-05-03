@@ -16,14 +16,26 @@ import { site } from '@/lib/site';
 // pre-order section) is hidden for now. To restore, re-import
 // RetailerStrip and add <RetailerStrip /> after Endorsement below.
 
+const TITLE = 'The Book | Artificial Intelligence for Nonprofit Fundraising';
+const DESCRIPTION =
+  'Eleven case studies, named teams, specific results. The practical AI playbook for fundraisers and nonprofit leaders. Publishing June 2026.';
+const URL = `${site.url}/the-book`;
+
 export const metadata: Metadata = {
-  title: 'The Book',
-  description: site.description,
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
   openGraph: {
-    title: site.bookTitle,
-    description: site.description,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
     type: 'book',
-    url: `${site.url}/the-book`,
+    siteName: site.author.name,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 

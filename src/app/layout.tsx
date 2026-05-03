@@ -16,23 +16,28 @@ const mulish = Mulish({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
 });
 
+// TODO: add the OG image at /public/images/og-default.jpg (1200 x 630).
+// Until that file exists, social previews will fall back to whatever each
+// platform shows for a missing image. See public/og-image.placeholder.txt
+// for composition notes. When the file is added, no code changes needed.
+const OG_IMAGE = '/images/og-default.jpg';
+
+// Site-wide metadata defaults. Every page MUST set its own title,
+// description, openGraph.title/description/url, twitter.title/description,
+// and alternates.canonical. The defaults below act as a safety net only.
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.author.name} | ${site.bookTitle}`,
-    template: `%s | ${site.author.name}`,
+    absolute: `${site.bookTitle} | ${site.author.name}`,
   },
   description: site.description,
   openGraph: {
-    title: site.bookTitle,
-    description: site.description,
     type: 'website',
-    url: site.url,
     siteName: site.author.name,
     locale: 'en_US',
     images: [
       {
-        url: '/og-image.png',
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: site.bookTitle,
@@ -41,14 +46,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: site.bookTitle,
-    description: site.description,
-    images: ['/og-image.png'],
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: site.url,
-  },
+  alternates: { canonical: site.url },
 };
 
 const personJsonLd = {
