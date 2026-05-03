@@ -18,15 +18,26 @@ export async function generateStaticParams(): Promise<Params[]> {
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
+  const title = `${post.title} | Insights | ${site.author.name}`;
+  const description =
+    post.excerpt ?? `Field note by ${site.author.name} on AI and philanthropy.`;
+  const url = `${site.url}/insights/${post.slug}`;
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: { absolute: title },
+    description,
+    alternates: { canonical: url },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description,
       type: 'article',
-      url: `${site.url}/insights/${post.slug}`,
+      url,
       publishedTime: post.date,
+      siteName: site.author.name,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   };
 }
