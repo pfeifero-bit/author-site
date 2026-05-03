@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server';
+import { sendChapterOneEmail } from '@/lib/sendChapterOneEmail';
 
 export const runtime = 'nodejs';
 
 type Body = { email?: string; source?: string };
+
+// Sources that should trigger the Chapter 1 PDF send. Currently only the
+// hero + sample-chapter forms ask for the chapter; footer Dispatch
+// signups and the preorder-notify form intentionally do NOT.
+const CHAPTER_ONE_SOURCES = new Set(['sample-chapter']);
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -43,6 +49,19 @@ export async function POST(req: Request) {
         console.error('Resend subscribe failed:', res.status, text);
         return NextResponse.json({ error: 'Subscription failed.' }, { status: 502 });
       }
+
+      // Audience-add succeeded (or contact already existed). If this
+      // signup came from the Chapter 1 form, send the PDF email. We do
+      // NOT fail the request if the email send fails — the user is
+      // already in the audience, so a manual broadcast can recover.
+      // The Vercel log will surface any failures for follow-up.
+      if (CHAPTER_ONE_SOURCES.has(source)) {
+        const sendResult = await sendChapterOneEmail(email);
+        if (!sendResult.ok) {
+          console.error('Chapter 1 email send failed:', sendResult);
+        }
+      }
+
       return NextResponse.json({ ok: true, source });
     } catch (err) {
       console.error('Resend subscribe error:', err);
