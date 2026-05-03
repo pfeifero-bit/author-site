@@ -5,6 +5,13 @@ import { Header } from '@/components/site/Header';
 import { Footer } from '@/components/site/Footer';
 import { Analytics } from '@/components/site/Analytics';
 import { site } from '@/lib/site';
+import {
+  buildOrganizationSchema,
+  buildPersonSchema,
+  buildBookSchema,
+  buildWebSiteSchema,
+  jsonLdScript,
+} from '@/lib/jsonLd';
 
 // Single family across display and body, matching the book cover.
 // If the designer used Manrope, Plus Jakarta Sans, or Hanken Grotesk
@@ -48,35 +55,26 @@ export const metadata: Metadata = {
     images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: site.url },
-};
-
-const personJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: site.author.name,
-  jobTitle: site.author.role,
-  worksFor: {
-    '@type': 'Organization',
-    name: site.author.company.name,
-    url: site.author.company.url,
+  alternates: {
+    canonical: site.url,
+    // Auto-discovery for RSS feed readers and AI aggregators that look
+    // for <link rel="alternate" type="application/rss+xml"> in <head>.
+    types: {
+      'application/rss+xml': [
+        { url: '/rss.xml', title: `${site.bookTitle} — Dispatch` },
+      ],
+    },
   },
-  url: site.url,
-  sameAs: [site.author.linkedin, site.author.company.url],
 };
 
-const bookJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Book',
-  name: site.bookTitle,
-  alternateName: site.bookSubtitle,
-  author: { '@type': 'Person', name: site.author.name },
-  bookFormat: 'https://schema.org/Hardcover',
-  inLanguage: 'en',
-  datePublished: site.publishDate,
-  publisher: { '@type': 'Person', name: site.author.name },
-  url: `${site.url}/the-book`,
-};
+// Site-wide structured data. Builders live in src/lib/jsonLd.ts so all
+// pages reference the same canonical schema shapes (and the same @id
+// references for cross-linking, e.g. an Article on /insights/[slug]
+// authored by the same Person node defined here).
+const personSchema = buildPersonSchema();
+const bookSchema = buildBookSchema();
+const webSiteSchema = buildWebSiteSchema();
+const organizationSchema = buildOrganizationSchema();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -87,13 +85,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <Analytics />
+        {/* JSON-LD structured data. Order does not matter to crawlers but
+            we group by domain — site, then author, then product. */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(webSiteSchema) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(bookSchema) }}
         />
       </body>
     </html>
