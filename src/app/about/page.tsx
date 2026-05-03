@@ -4,6 +4,7 @@ import { SelectedWork } from '@/components/sections/SelectedWork';
 import { AboutCta } from '@/components/sections/AboutCta';
 import { site } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
+import { buildProfilePageSchema, jsonLdScript } from '@/lib/jsonLd';
 
 export const metadata = buildMetadata({
   title: 'Dale Nirvani Pfeifer | AI, Fundraising, and Philanthropy',
@@ -13,9 +14,17 @@ export const metadata = buildMetadata({
   ogType: 'profile',
 });
 
+const profileSchema = buildProfilePageSchema();
+
 export default function AboutPage() {
   return (
     <>
+      {/* ProfilePage schema. AI search uses this to identify /about as
+          the canonical bio surface for the author. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(profileSchema) }}
+      />
       <AboutHero />
       <AboutBio />
       <SelectedWork />

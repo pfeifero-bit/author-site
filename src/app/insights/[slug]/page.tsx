@@ -9,6 +9,7 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts';
 import { mdxComponents } from '@/components/site/MdxComponents';
 import { site } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
+import { buildArticleSchema, jsonLdScript } from '@/lib/jsonLd';
 
 type Params = { slug: string };
 
@@ -41,8 +42,21 @@ export default function PostPage({ params }: { params: Params }) {
   const post = getPostBySlug(params.slug);
   if (!post || post.draft) notFound();
 
+  // Article schema for AI search. Linked back to the site-wide Person
+  // and WebSite nodes via @id so authority signals chain together.
+  const articleSchema = buildArticleSchema({
+    slug: post.slug,
+    title: post.title,
+    date: post.date,
+    excerpt: post.excerpt,
+  });
+
   return (
     <article className="container-prose pb-24 pt-16 md:pb-32 md:pt-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(articleSchema) }}
+      />
       <Link
         href="/insights"
         className="text-xs font-semibold uppercase tracking-widest text-ink/70 transition hover:text-ink"
