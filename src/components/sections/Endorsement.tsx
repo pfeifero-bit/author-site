@@ -40,10 +40,6 @@ export function Endorsement() {
           </div>
         </figcaption>
       </motion.figure>
-
-      <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ink/70">
-        More endorsements arriving ahead of launch. Subscribers see them first.
-      </p>
     </section>
   );
 }
