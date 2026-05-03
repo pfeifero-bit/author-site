@@ -83,7 +83,7 @@ export function TableOfContents() {
             className="grid gap-10 md:grid-cols-12 md:gap-16"
           >
             <header className="md:col-span-4">
-              <p className="font-mono text-[11px] font-semibold uppercase tracking-widest text-accent-600">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-widest text-accent-on-cream">
                 {part.subtitle} &middot; {part.number}
               </p>
               <h3

@@ -43,10 +43,10 @@ export function EmailCapture({
 
   const isFooter = variant === 'footer';
   const inputClasses = isFooter
-    ? 'flex-1 rounded-md border border-cream/20 bg-cream/5 px-4 py-2.5 text-sm text-cream placeholder:text-cream/55 focus:border-accent-300 focus:outline-none focus:ring-1 focus:ring-accent-300'
-    : 'flex-1 rounded-md border border-ink/15 bg-cream px-4 py-2.5 text-sm text-ink placeholder:text-ink/55 focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500';
+    ? 'flex-1 rounded-md border border-cream/20 bg-cream/5 px-4 py-2.5 text-sm text-cream placeholder:text-cream/55 focus:border-accent-on-navy focus:outline-none focus:ring-1 focus:ring-accent-on-navy'
+    : 'flex-1 rounded-md border border-ink/15 bg-cream px-4 py-2.5 text-sm text-ink placeholder:text-ink/55 focus:border-accent-on-cream focus:outline-none focus:ring-1 focus:ring-accent-on-cream';
   const buttonClasses = isFooter
-    ? 'rounded-md bg-accent-300 px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-200 disabled:opacity-50'
+    ? 'rounded-md bg-white px-4 py-2.5 text-sm font-medium text-ink transition hover:bg-cream disabled:opacity-50'
     : 'rounded-md bg-ink px-4 py-2.5 text-sm font-semibold text-cream transition hover:bg-ink-700 disabled:opacity-50';
 
   if (status === 'success') {

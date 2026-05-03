@@ -31,17 +31,14 @@ const config: Config = {
           300: '#e3d8c2',
           400: '#cfbf9f',
         },
-        // Cover pale-blue family. accent-300 matches the cover subtitle.
-        // accent-500 is the safe-on-cream variant for hairlines, links, hovers.
+        // Two surface-tuned accent blues. The single previous accent (a
+        // washed-out periwinkle) had insufficient contrast on cream. Now:
+        //   accent-on-cream: dark blue, WCAG AA on cream (~6.5:1 at 16px)
+        //   accent-on-navy:  light blue, comfortable contrast on navy
+        // Use the variant matching the surface the element sits on.
         accent: {
-          DEFAULT: '#4f7ac7',
-          100: '#dee9f7',
-          200: '#bdd2ed',
-          300: '#a6bfe0',
-          400: '#7ea0d4',
-          500: '#4f7ac7',
-          600: '#3a5fa8',
-          700: '#2c4886',
+          'on-cream': '#2D5BA8',
+          'on-navy': '#6B9FE0',
         },
       },
       fontFamily: {
@@ -60,10 +57,10 @@ const config: Config = {
           css: {
             '--tw-prose-body': theme('colors.ink.700'),
             '--tw-prose-headings': theme('colors.ink.DEFAULT'),
-            '--tw-prose-links': theme('colors.accent.600'),
+            '--tw-prose-links': theme('colors.accent.on-cream'),
             '--tw-prose-bold': theme('colors.ink.DEFAULT'),
             '--tw-prose-quotes': theme('colors.ink.500'),
-            '--tw-prose-quote-borders': theme('colors.accent.500'),
+            '--tw-prose-quote-borders': theme('colors.accent.on-cream'),
             fontFamily: theme('fontFamily.sans')[0],
           },
         },

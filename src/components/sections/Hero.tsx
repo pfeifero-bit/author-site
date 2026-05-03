@@ -9,21 +9,21 @@ import { WaitlistButton } from '@/components/site/WaitlistButton';
 export function Hero() {
   return (
     <section className="relative">
-      <div className="container-prose grid gap-12 pb-24 pt-20 md:grid-cols-12 md:gap-16 md:pb-28 md:pt-24 lg:pt-28">
+      <div className="container-prose grid gap-12 pb-16 pt-14 md:grid-cols-12 md:gap-16 md:pb-20 md:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="md:col-span-7"
         >
-          <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-ink/75">
-            <span aria-hidden className="h-px w-6 bg-accent-500" />
+          <p className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.12em] text-accent-on-cream">
+            <span aria-hidden className="h-px w-3 bg-accent-on-cream" />
             New book. Publishing {site.publishMonth}.
           </p>
 
           <h1 className="text-balance text-[2.75rem] leading-[1.02] tracking-tight md:text-6xl lg:text-[4.25rem]">
             <span className="block font-extrabold text-ink">Artificial Intelligence</span>
-            <span className="block font-medium text-accent-600">for Nonprofit Fundraising</span>
+            <span className="block font-medium text-accent-on-cream">for Nonprofit Fundraising</span>
           </h1>
 
           <p className="mt-8 max-w-[36rem] text-pretty text-lg leading-relaxed text-ink/75 md:text-xl">
@@ -49,7 +49,7 @@ export function Hero() {
               CEO of{' '}
               <a
                 href={site.author.company.url}
-                className="underline decoration-accent-500 decoration-1 underline-offset-4 hover:text-ink"
+                className="underline decoration-accent-on-cream decoration-1 underline-offset-4 hover:text-ink"
               >
                 Giving Compass
               </a>

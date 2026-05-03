@@ -20,6 +20,11 @@ export default function HomePage() {
       <PullQuote />
       <CaseStudies />
       <Endorsement />
+      {/* Cream-to-navy bridge: a thin accent rule with breathing room
+          softens the hard cream/navy section transition. */}
+      <div aria-hidden className="container-prose">
+        <div className="my-12 h-px w-full bg-accent-on-cream/20" />
+      </div>
       <SampleChapter />
     </>
   );

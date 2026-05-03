@@ -84,14 +84,14 @@ export default function PostPage({ params }: { params: Params }) {
             href={site.author.company.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline decoration-accent-500 decoration-1 underline-offset-4 hover:text-ink"
+            className="underline decoration-accent-on-cream decoration-1 underline-offset-4 hover:text-ink"
           >
             Giving Compass
           </a>{' '}
           and author of{' '}
           <Link
             href="/the-book"
-            className="underline decoration-accent-500 decoration-1 underline-offset-4 hover:text-ink"
+            className="underline decoration-accent-on-cream decoration-1 underline-offset-4 hover:text-ink"
           >
             <span className="italic">Artificial Intelligence for Nonprofit Fundraising</span>
           </Link>

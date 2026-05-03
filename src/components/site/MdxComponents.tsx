@@ -24,7 +24,7 @@ export const mdxComponents: MDXComponents = {
   a: ({ children, href, ...props }) => (
     <a
       href={href}
-      className="underline decoration-accent-500 decoration-1 underline-offset-4 hover:text-ink"
+      className="underline decoration-accent-on-cream decoration-1 underline-offset-4 hover:text-ink"
       target={href?.startsWith('http') ? '_blank' : undefined}
       rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
       {...props}
@@ -44,7 +44,7 @@ export const mdxComponents: MDXComponents = {
   ),
   blockquote: ({ children, ...props }) => (
     <blockquote
-      className="mt-8 border-l-4 border-accent-500 pl-6 text-xl font-light leading-relaxed text-ink/85"
+      className="mt-8 border-l-4 border-accent-on-cream pl-6 text-xl font-light leading-relaxed text-ink/85"
       {...props}
     >
       {children}

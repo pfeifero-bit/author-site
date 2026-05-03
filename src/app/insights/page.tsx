@@ -31,7 +31,7 @@ export default function InsightsPage() {
           </p>
           <h1 className="mt-5 text-balance text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl lg:text-[4rem]">
             <span className="block">Field notes on AI</span>
-            <span className="block font-medium text-accent-600">and philanthropy.</span>
+            <span className="block font-medium text-accent-on-cream">and philanthropy.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-ink/75">
             Short essays on the practice of fundraising as automation scales, plus the
@@ -77,7 +77,7 @@ export default function InsightsPage() {
                         <p className="mt-2 max-w-2xl text-base leading-relaxed text-ink/70">{post.excerpt}</p>
                       )}
                     </div>
-                    <p className="text-xs text-ink/70 transition group-hover:text-accent-600 md:whitespace-nowrap">
+                    <p className="text-xs text-ink/70 transition group-hover:text-accent-on-cream md:whitespace-nowrap">
                       {post.readingMinutes} min read
                       <span aria-hidden className="ml-2">&rarr;</span>
                     </p>

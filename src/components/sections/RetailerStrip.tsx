@@ -12,7 +12,7 @@ export function RetailerStrip() {
     >
       <div className="container-prose py-24 md:py-32">
         <header className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-300">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-navy">
             Pre-order
           </p>
           <h2
@@ -40,12 +40,12 @@ export function RetailerStrip() {
                 href={r.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full items-center justify-between rounded-md border border-cream/15 bg-cream/[0.04] px-5 py-5 transition hover:border-accent-300 hover:bg-cream/[0.08]"
+                className="group flex h-full items-center justify-between rounded-md border border-cream/15 bg-cream/[0.04] px-5 py-5 transition hover:border-accent-on-navy hover:bg-cream/[0.08]"
               >
                 <span className="text-base font-semibold text-cream md:text-lg">{r.name}</span>
                 <span
                   aria-hidden
-                  className="text-cream/70 transition group-hover:translate-x-0.5 group-hover:text-accent-300"
+                  className="text-cream/70 transition group-hover:translate-x-0.5 group-hover:text-accent-on-navy"
                 >
                   &rarr;
                 </span>

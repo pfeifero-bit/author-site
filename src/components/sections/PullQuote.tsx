@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export function PullQuote() {
   return (
-    <section aria-labelledby="thesis" className="container-prose py-24 md:py-32">
+    <section aria-labelledby="thesis" className="container-prose py-16 md:py-20">
       <motion.figure
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ export function PullQuote() {
         >
           AI did not change fundraising because it made tasks faster.
           It changed fundraising because it changed where{' '}
-          <span className="font-extrabold text-accent-600">judgment</span> lives.
+          <span className="font-extrabold text-accent-on-cream">judgment</span> lives.
         </blockquote>
         <figcaption className="mt-6 text-sm text-ink/70">
           From Chapter 1, <span className="font-medium">Why Judgment Is Becoming the Differentiator</span>.

@@ -15,13 +15,13 @@ export function AboutHero() {
           className="md:col-span-7"
         >
           <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-ink/75">
-            <span aria-hidden className="h-px w-6 bg-accent-500" />
+            <span aria-hidden className="h-px w-6 bg-accent-on-cream" />
             About
           </p>
 
           <h1 className="text-balance text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl lg:text-[4.25rem]">
             <span className="block">Dale Nirvani Pfeifer</span>
-            <span className="block font-medium text-accent-600">on AI and philanthropy.</span>
+            <span className="block font-medium text-accent-on-cream">on AI and philanthropy.</span>
           </h1>
 
           <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-ink/75 md:text-xl">
@@ -30,7 +30,7 @@ export function AboutHero() {
               href={site.author.company.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-accent-500 decoration-1 underline-offset-4 hover:text-ink"
+              className="underline decoration-accent-on-cream decoration-1 underline-offset-4 hover:text-ink"
             >
               Giving Compass
             </a>

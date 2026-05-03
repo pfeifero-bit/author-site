@@ -58,7 +58,7 @@ export function SpeakingInquiry() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="md:col-span-5"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-300">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-navy">
             Speaking inquiry
           </p>
           <h2
@@ -66,7 +66,7 @@ export function SpeakingInquiry() {
             className="mt-4 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl"
           >
             <span className="block">Tell us about</span>
-            <span className="block text-accent-300">your event.</span>
+            <span className="block text-accent-on-navy">your event.</span>
           </h2>
           <p className="mt-6 max-w-md text-pretty text-base leading-relaxed text-cream/75">
             The more context you can share now, the faster the reply. Dale or her team will get
@@ -83,7 +83,7 @@ export function SpeakingInquiry() {
         >
           {status === 'success' ? (
             <div className="rounded-md border border-cream/15 bg-cream/[0.04] p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-accent-300">
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-navy">
                 Thank you
               </p>
               <p className="mt-3 text-2xl font-bold leading-snug">
@@ -125,14 +125,14 @@ export function SpeakingInquiry() {
                   name="message"
                   rows={4}
                   placeholder="Anything you want us to know about the audience, the moment, or the brief."
-                  className="mt-2 w-full rounded-md border border-cream/15 bg-ink/40 px-4 py-3 text-base text-cream placeholder:text-cream/55 focus:border-accent-300 focus:outline-none focus:ring-1 focus:ring-accent-300"
+                  className="mt-2 w-full rounded-md border border-cream/15 bg-ink/40 px-4 py-3 text-base text-cream placeholder:text-cream/55 focus:border-accent-on-navy focus:outline-none focus:ring-1 focus:ring-accent-on-navy"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent-300 px-6 py-3 text-sm font-semibold text-ink transition hover:bg-accent-200 disabled:opacity-50"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-ink transition hover:bg-cream disabled:opacity-50"
               >
                 {status === 'loading' ? 'Sending' : 'Send inquiry'}
                 {status !== 'loading' && <span aria-hidden>&rarr;</span>}
@@ -173,7 +173,7 @@ function Field({
     <div>
       <label htmlFor={id} className="text-xs font-semibold uppercase tracking-widest text-cream/60">
         {label}
-        {required && <span aria-hidden className="ml-1 text-accent-300">*</span>}
+        {required && <span aria-hidden className="ml-1 text-accent-on-navy">*</span>}
       </label>
       <input
         id={id}
@@ -183,7 +183,7 @@ function Field({
         placeholder={placeholder}
         autoComplete={autoComplete}
         min={min}
-        className="mt-2 w-full rounded-md border border-cream/15 bg-ink/40 px-4 py-3 text-base text-cream placeholder:text-cream/55 focus:border-accent-300 focus:outline-none focus:ring-1 focus:ring-accent-300"
+        className="mt-2 w-full rounded-md border border-cream/15 bg-ink/40 px-4 py-3 text-base text-cream placeholder:text-cream/55 focus:border-accent-on-navy focus:outline-none focus:ring-1 focus:ring-accent-on-navy"
       />
     </div>
   );
@@ -200,7 +200,7 @@ function SelectField({ label, name, options }: { label: string; name: string; op
         id={id}
         name={name}
         defaultValue=""
-        className="mt-2 w-full rounded-md border border-cream/15 bg-ink/40 px-4 py-3 text-base text-cream focus:border-accent-300 focus:outline-none focus:ring-1 focus:ring-accent-300"
+        className="mt-2 w-full rounded-md border border-cream/15 bg-ink/40 px-4 py-3 text-base text-cream focus:border-accent-on-navy focus:outline-none focus:ring-1 focus:ring-accent-on-navy"
       >
         <option value="" className="bg-ink">Select</option>
         {options.map((o) => (

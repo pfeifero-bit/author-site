@@ -48,8 +48,8 @@ export function BookCover({ size = 'md', className = '' }: { size?: Size; classN
           <div className="flex flex-col items-start gap-1">
             <p className={`${s.title} font-extrabold leading-[0.95] text-cream`}>Artificial</p>
             <p className={`${s.title} font-extrabold leading-[0.95] text-cream`}>Intelligence</p>
-            <p className={`mt-2 ${s.secondary} font-medium leading-[1.05] text-accent-300`}>for Nonprofit</p>
-            <p className={`${s.secondary} font-medium leading-[1.05] text-accent-300`}>Fundraising</p>
+            <p className={`mt-2 ${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>for Nonprofit</p>
+            <p className={`${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>Fundraising</p>
           </div>
 
           <div>

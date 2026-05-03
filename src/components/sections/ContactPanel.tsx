@@ -57,7 +57,7 @@ export function ContactPanel() {
           </p>
           <h1 className="mt-5 text-balance text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
             <span className="block">Get in</span>
-            <span className="block text-accent-600">touch.</span>
+            <span className="block text-accent-on-cream">touch.</span>
           </h1>
           <p className="mt-8 max-w-md text-pretty text-lg leading-relaxed text-ink/75">
             For book inquiries, press, speaking requests, or anything in between, the form is
@@ -92,7 +92,7 @@ export function ContactPanel() {
         >
           {status === 'success' ? (
             <div className="rounded-md border border-ink/10 bg-cream-50 p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-cream">
                 Thank you
               </p>
               <p className="mt-3 text-2xl font-bold leading-snug text-ink">
@@ -122,7 +122,7 @@ export function ContactPanel() {
                   id="subject"
                   name="subject"
                   defaultValue=""
-                  className="mt-2 w-full rounded-md border border-ink/15 bg-cream px-4 py-3 text-base text-ink focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+                  className="mt-2 w-full rounded-md border border-ink/15 bg-cream px-4 py-3 text-base text-ink focus:border-accent-on-cream focus:outline-none focus:ring-1 focus:ring-accent-on-cream"
                 >
                   <option value="" disabled>
                     Select
@@ -137,7 +137,7 @@ export function ContactPanel() {
 
               <div>
                 <label htmlFor="message" className="text-xs font-semibold uppercase tracking-widest text-ink/70">
-                  Message<span aria-hidden className="ml-1 text-accent-600">*</span>
+                  Message<span aria-hidden className="ml-1 text-accent-on-cream">*</span>
                 </label>
                 <textarea
                   id="message"
@@ -145,7 +145,7 @@ export function ContactPanel() {
                   rows={6}
                   required
                   placeholder="A short note works."
-                  className="mt-2 w-full rounded-md border border-ink/15 bg-cream px-4 py-3 text-base text-ink placeholder:text-ink/55 focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+                  className="mt-2 w-full rounded-md border border-ink/15 bg-cream px-4 py-3 text-base text-ink placeholder:text-ink/55 focus:border-accent-on-cream focus:outline-none focus:ring-1 focus:ring-accent-on-cream"
                 />
               </div>
 
@@ -178,9 +178,9 @@ function DirectLink({ label, value, href }: { label: string; value: string; href
       href={href}
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
-      className="group flex items-baseline justify-between border-t border-ink/10 pt-4 text-ink transition hover:text-accent-600"
+      className="group flex items-baseline justify-between border-t border-ink/10 pt-4 text-ink transition hover:text-accent-on-cream"
     >
-      <span className="text-xs font-semibold uppercase tracking-widest text-ink/65 group-hover:text-accent-600">
+      <span className="text-xs font-semibold uppercase tracking-widest text-ink/65 group-hover:text-accent-on-cream">
         {label}
       </span>
       <span className="text-base font-semibold">{value}</span>
@@ -208,7 +208,7 @@ function Field({
     <div>
       <label htmlFor={id} className="text-xs font-semibold uppercase tracking-widest text-ink/70">
         {label}
-        {required && <span aria-hidden className="ml-1 text-accent-600">*</span>}
+        {required && <span aria-hidden className="ml-1 text-accent-on-cream">*</span>}
       </label>
       <input
         id={id}
@@ -217,7 +217,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         autoComplete={autoComplete}
-        className="mt-2 w-full rounded-md border border-ink/15 bg-cream px-4 py-3 text-base text-ink placeholder:text-ink/55 focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+        className="mt-2 w-full rounded-md border border-ink/15 bg-cream px-4 py-3 text-base text-ink placeholder:text-ink/55 focus:border-accent-on-cream focus:outline-none focus:ring-1 focus:ring-accent-on-cream"
       />
     </div>
   );

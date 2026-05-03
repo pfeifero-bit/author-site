@@ -69,7 +69,7 @@ export function SpeakingTopics() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: (i % 2) * 0.05 }}
             className="border-t border-ink/10 pt-6"
           >
-            <p className="font-mono text-xs font-semibold tracking-widest text-accent-600">
+            <p className="font-mono text-xs font-semibold tracking-widest text-accent-on-cream">
               {t.number}
             </p>
             <h3 className="mt-3 text-2xl font-extrabold leading-tight md:text-[1.65rem]">

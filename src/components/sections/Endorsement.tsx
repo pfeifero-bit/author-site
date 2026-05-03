@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export function Endorsement() {
   return (
-    <section aria-labelledby="endorsement" className="container-prose py-24 md:py-32">
+    <section aria-labelledby="endorsement" className="container-prose py-16 md:py-20">
       <motion.figure
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export function Endorsement() {
         >
           Can AI help us stay human in the work that matters most? This book answers
           that question with a{' '}
-          <span className="font-extrabold text-accent-600">resounding yes</span>.
+          <span className="font-extrabold text-accent-on-cream">resounding yes</span>.
         </blockquote>
 
         <figcaption className="mt-8 flex items-center gap-4">
@@ -41,7 +41,7 @@ export function Endorsement() {
         </figcaption>
       </motion.figure>
 
-      <p className="mx-auto mt-14 max-w-2xl text-center text-sm text-ink/70">
+      <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ink/70">
         More endorsements arriving ahead of launch. Subscribers see them first.
       </p>
     </section>

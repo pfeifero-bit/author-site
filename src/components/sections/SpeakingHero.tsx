@@ -14,13 +14,13 @@ export function SpeakingHero() {
           className="max-w-4xl"
         >
           <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-ink/75">
-            <span aria-hidden className="h-px w-6 bg-accent-500" />
+            <span aria-hidden className="h-px w-6 bg-accent-on-cream" />
             Speaking
           </p>
 
           <h1 className="text-balance text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl lg:text-[4.25rem]">
             <span className="block">Keynotes and conversations</span>
-            <span className="block font-medium text-accent-600">on AI in philanthropy.</span>
+            <span className="block font-medium text-accent-on-cream">on AI in philanthropy.</span>
           </h1>
 
           <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-ink/75 md:text-xl">

@@ -7,7 +7,7 @@ export function Footer() {
             <footer className="border-t border-ink/10 bg-ink text-cream">
       <div className="container-prose grid gap-12 py-16 md:grid-cols-2">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-300">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-navy">
             The dispatch
           </p>
           <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl">
@@ -27,7 +27,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2">
               {site.nav.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-cream/80 transition hover:text-accent-300">
+                  <Link href={item.href} className="text-cream/80 transition hover:text-accent-on-navy">
                     {item.label}
                   </Link>
                 </li>
@@ -42,7 +42,7 @@ export function Footer() {
                   href={site.author.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cream/80 transition hover:text-accent-300"
+                  className="text-cream/80 transition hover:text-accent-on-navy"
                 >
                   LinkedIn
                 </a>
@@ -52,13 +52,13 @@ export function Footer() {
                   href={site.author.company.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cream/80 transition hover:text-accent-300"
+                  className="text-cream/80 transition hover:text-accent-on-navy"
                 >
                   Giving Compass
                 </a>
               </li>
               <li>
-                <Link href="/contact" className="text-cream/80 transition hover:text-accent-300">
+                <Link href="/contact" className="text-cream/80 transition hover:text-accent-on-navy">
                   Get in touch
                 </Link>
               </li>

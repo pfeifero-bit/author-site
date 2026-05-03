@@ -137,7 +137,7 @@ function WaitlistModal({ open, onClose }: { open: boolean; onClose: () => void }
 
             {status === 'success' ? (
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
+                <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-cream">
                   Thank you
                 </p>
                 <h2
@@ -187,7 +187,7 @@ function WaitlistModal({ open, onClose }: { open: boolean; onClose: () => void }
                     placeholder="Your email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full rounded-md border border-ink/15 bg-cream px-4 py-3 text-base text-ink placeholder:text-ink/45 focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+                    className="w-full rounded-md border border-ink/15 bg-cream px-4 py-3 text-base text-ink placeholder:text-ink/45 focus:border-accent-on-cream focus:outline-none focus:ring-1 focus:ring-accent-on-cream"
                   />
                   <button
                     type="submit"

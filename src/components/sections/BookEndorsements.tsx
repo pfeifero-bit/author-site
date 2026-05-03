@@ -48,7 +48,7 @@ export function BookEndorsements() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto mt-16 max-w-3xl"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-cream">
             From the foreword
           </p>
           <blockquote className="mt-5 text-balance text-2xl font-light leading-[1.35] text-ink md:text-[1.75rem] md:leading-[1.3]">

@@ -37,7 +37,7 @@ const cases: Case[] = [
 export function CaseStudies() {
   return (
     <section aria-labelledby="inside-the-book" className="bg-cream-50/60">
-      <div className="container-prose py-24 md:py-32">
+      <div className="container-prose py-16 md:py-20">
         <header className="mx-auto max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-widest text-ink/65">
             Inside the book
@@ -69,7 +69,7 @@ export function CaseStudies() {
               </p>
 
               <div className="mt-8">
-                <p className="text-[3.25rem] font-extrabold leading-none tracking-tight text-accent-600 md:text-[3.75rem]">
+                <p className="text-[3.25rem] font-extrabold leading-none tracking-tight text-accent-on-cream md:text-[3.75rem]">
                   {c.metric}
                 </p>
                 <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-ink/70">

@@ -71,7 +71,7 @@ export function SelectedWork() {
                 </span>
                 <span className="text-lg font-bold leading-snug md:text-xl">{item.title}</span>
                 <span className="hidden text-sm text-ink/70 md:block">{item.outlet}</span>
-                <span className="text-right text-sm text-ink/70 transition group-hover:text-accent-600">
+                <span className="text-right text-sm text-ink/70 transition group-hover:text-accent-on-cream">
                   <span className="md:hidden">{item.year}</span>
                   <span aria-hidden className="hidden md:inline">{item.year} &rarr;</span>
                 </span>

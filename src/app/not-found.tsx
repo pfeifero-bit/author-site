@@ -14,7 +14,7 @@ export default function NotFound() {
       </p>
       <h1 className="mt-4 max-w-3xl text-balance text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
         <span className="block">That page isn&rsquo;t here.</span>
-        <span className="block font-medium text-accent-600">Try one of these instead.</span>
+        <span className="block font-medium text-accent-on-cream">Try one of these instead.</span>
       </h1>
       <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-ink/70">
         The link you followed may be from an older version of this site. The current pages are
@@ -29,7 +29,7 @@ export default function NotFound() {
               className="block px-5 py-5 text-base font-bold text-ink transition hover:bg-ink/[0.02]"
             >
               {item.label}{' '}
-              <span aria-hidden className="ml-1 text-ink/40 transition group-hover:text-accent-600">
+              <span aria-hidden className="ml-1 text-ink/40 transition group-hover:text-accent-on-cream">
                 &rarr;
               </span>
             </Link>

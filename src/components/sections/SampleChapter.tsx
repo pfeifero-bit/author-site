@@ -35,9 +35,9 @@ export function SampleChapter() {
     <section
       id="sample"
       aria-labelledby="sample-title"
-      className="border-t border-ink/10 bg-ink text-cream"
+      className="bg-ink text-cream"
     >
-      <div className="container-prose grid gap-12 py-24 md:grid-cols-12 md:gap-16 md:py-32">
+      <div className="container-prose grid gap-12 py-16 md:grid-cols-12 md:gap-16 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export function SampleChapter() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="md:col-span-7"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-300">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-navy">
             Read before you order
           </p>
           <h2
@@ -53,7 +53,7 @@ export function SampleChapter() {
             className="mt-4 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl"
           >
             <span className="block">The first chapter,</span>
-            <span className="block text-accent-300">on the house.</span>
+            <span className="block text-accent-on-navy">on the house.</span>
           </h2>
           <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-cream/75">
             Chapter 1, <span className="italic">Why Judgment Is Becoming the Differentiator</span>,
@@ -73,7 +73,7 @@ export function SampleChapter() {
           <div className="rounded-md border border-cream/10 bg-cream/[0.04] p-6 md:p-8">
             {status === 'success' ? (
               <div className="flex flex-col items-start">
-                <p className="text-sm font-semibold uppercase tracking-widest text-accent-300">
+                <p className="text-sm font-semibold uppercase tracking-widest text-accent-on-navy">
                   Thank you
                 </p>
                 <p className="mt-3 text-lg font-medium leading-snug text-cream">
@@ -83,7 +83,7 @@ export function SampleChapter() {
                 <a
                   href={sampleUrl}
                   download
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-300 px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-accent-200"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-cream"
                 >
                   Download Chapter 1
                   <span aria-hidden>&darr;</span>
@@ -103,13 +103,13 @@ export function SampleChapter() {
                   placeholder="you@nonprofit.org"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-2 w-full rounded-md border border-cream/15 bg-ink/40 px-4 py-3 text-base text-cream placeholder:text-cream/55 focus:border-accent-300 focus:outline-none focus:ring-1 focus:ring-accent-300"
+                  className="mt-2 w-full rounded-md border border-cream/15 bg-ink/40 px-4 py-3 text-base text-cream placeholder:text-cream/55 focus:border-accent-on-navy focus:outline-none focus:ring-1 focus:ring-accent-on-navy"
                 />
 
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-300 px-5 py-3 text-sm font-semibold text-ink transition hover:bg-accent-200 disabled:opacity-50"
+                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-ink transition hover:bg-cream disabled:opacity-50"
                 >
                   {status === 'loading' ? 'Sending' : 'Send me Chapter 1'}
                   {status !== 'loading' && <span aria-hidden>&rarr;</span>}
