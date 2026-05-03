@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server';
-import { sendChapterOneEmail } from '@/lib/sendChapterOneEmail';
+import { sendChapterOneSequence } from '@/lib/email/chapterOneSequence';
 
 export const runtime = 'nodejs';
 
 type Body = { email?: string; source?: string };
 
-// Sources that should trigger the Chapter 1 PDF send. Currently only the
-// hero + sample-chapter forms ask for the chapter; footer Dispatch
-// signups and the preorder-notify form intentionally do NOT.
+// Sources that should trigger the Chapter 1 welcome drip (4-email
+// sequence: immediate + day 4 + day 10 + day 30). Footer Dispatch
+// signups and the preorder-notify form intentionally do NOT trigger
+// the drip.
 const CHAPTER_ONE_SOURCES = new Set(['sample-chapter']);
 
 function isValidEmail(email: string) {
@@ -51,14 +52,19 @@ export async function POST(req: Request) {
       }
 
       // Audience-add succeeded (or contact already existed). If this
-      // signup came from the Chapter 1 form, send the PDF email. We do
-      // NOT fail the request if the email send fails — the user is
-      // already in the audience, so a manual broadcast can recover.
-      // The Vercel log will surface any failures for follow-up.
+      // signup came from the Chapter 1 form, kick off the 4-email
+      // welcome drip: Day 0 sends immediately, Days 4 / 10 / 30 are
+      // scheduled via Resend's scheduled_at parameter so they fire
+      // automatically without cron jobs or dashboard automations.
+      //
+      // We do NOT fail the request if any email step fails — the user
+      // is already in the audience, so a manual broadcast or resend
+      // from the Resend dashboard can recover. Failures are logged to
+      // Vercel for follow-up.
       if (CHAPTER_ONE_SOURCES.has(source)) {
-        const sendResult = await sendChapterOneEmail(email);
+        const sendResult = await sendChapterOneSequence(email);
         if (!sendResult.ok) {
-          console.error('Chapter 1 email send failed:', sendResult);
+          console.error('Chapter 1 sequence dispatch failed:', sendResult);
         }
       }
 
