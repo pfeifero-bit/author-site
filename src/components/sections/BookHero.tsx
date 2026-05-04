@@ -27,7 +27,7 @@ export function BookHero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-pretty text-base font-medium leading-relaxed text-ink/80 md:text-lg">
-            How to Use AI to Raise More Money, Ethically and Effectively.
+            Raise More Money, Ethically and Effectively.
           </p>
 
           <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-ink/70 md:text-lg">
