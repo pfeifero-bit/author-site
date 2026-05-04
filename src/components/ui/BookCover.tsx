@@ -37,17 +37,23 @@ export function BookCover({ size = 'md', className = '' }: { size?: Size; classN
         aria-label={`Cover mockup. ${site.bookTitle}, by ${site.author.name}.`}
       >
         <div className="flex h-full flex-col justify-between p-6 text-cream md:p-7">
+          {/* Top tagline. The book's promise stated in two lines, set
+              in small uppercase to read as a publisher's tagline. */}
           <div>
-            <p className={`${s.subtitle} font-semibold uppercase tracking-widest text-cream/85`}>
+            <p className={`${s.subtitle} font-semibold uppercase leading-[1.5] tracking-widest text-cream/85`}>
               Raise More Money,
               <br />
               Ethically and Effectively
             </p>
           </div>
 
+          {/* Title block. "AI" sits as the dominant element; a short
+              hairline rule separates it from the qualifier "for Nonprofit
+              / Fundraising" rendered in the accent color. */}
           <div className="flex flex-col items-start gap-1">
-            <p className={`${s.title} font-extrabold leading-[0.95] text-cream`}>AI</p>
-            <p className={`mt-2 ${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>for Nonprofit</p>
+            <p className={`${s.title} font-extrabold leading-[0.9] tracking-[-0.02em] text-cream`}>AI</p>
+            <span aria-hidden className="my-2 h-0.5 w-8 bg-accent-on-navy" />
+            <p className={`${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>for Nonprofit</p>
             <p className={`${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>Fundraising</p>
           </div>
 

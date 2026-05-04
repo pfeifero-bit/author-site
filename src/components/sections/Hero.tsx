@@ -11,6 +11,15 @@ import { ChapterOneForm } from '@/components/site/ChapterOneForm';
 // than the literal string "true" is treated as false).
 const PREORDERS_LIVE = process.env.NEXT_PUBLIC_PREORDERS_LIVE === 'true';
 
+// Trust strip data shown between the waitlist button and the author
+// bio. Numbers reflect the actual book per the TOC on /the-book.
+// Keep in sync if scope changes.
+const TRUST_STATS: { value: string; label: string }[] = [
+  { value: '15', label: 'chapters' },
+  { value: '11', label: 'case studies' },
+  { value: '2026', label: 'platform landscape' },
+];
+
 export function Hero() {
   return (
     <section className="relative">
@@ -21,9 +30,11 @@ export function Hero() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="md:col-span-7"
         >
-          <p className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.12em] text-accent-on-cream">
-            <span aria-hidden className="h-px w-3 bg-accent-on-cream" />
-            New book. Publishing {site.publishMonth}.
+          {/* Eyebrow with hairline rule. Tighter than before — leans
+              editorial. The middle dot replaces a period. */}
+          <p className="mb-7 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.18em] text-accent-on-cream">
+            <span aria-hidden className="h-px w-6 bg-accent-on-cream" />
+            New book &middot; {site.publishMonth}
           </p>
 
           <h1 className="text-balance text-[2.75rem] leading-[1.02] tracking-tight md:text-6xl lg:text-[4.25rem]">
@@ -31,15 +42,22 @@ export function Hero() {
             <span className="block font-medium text-accent-on-cream">Fundraising</span>
           </h1>
 
-          <p className="mt-8 max-w-[36rem] text-pretty text-lg leading-relaxed text-ink/75 md:text-xl">
+          {/* Author byline. Small uppercase line that sits between the
+              headline and subtitle. Cheap credibility hit before the
+              reader gets into the longer description. */}
+          <p className="mt-6 text-[13px] font-medium uppercase tracking-[0.08em] text-ink/55">
+            By {site.author.name}
+          </p>
+
+          <p className="mt-5 max-w-[36rem] text-pretty text-lg leading-relaxed text-ink/75 md:text-xl">
             How to use AI to raise more money, ethically and effectively.
             A practical playbook for fundraisers and nonprofit leaders who carry both
             responsibility and care.
           </p>
 
-          {/* Primary CTA: Chapter 1 download. Inline on desktop, stacked
-              on mobile. Submits to the same backend as the SampleChapter
-              form and triggers the same /thank-you redirect. */}
+          {/* Primary CTA: Chapter 1 download. Wired to the same backend
+              as the SampleChapter form; submission triggers the 4-email
+              welcome drip and redirect to /thank-you. */}
           <div className="mt-10 max-w-xl">
             <ChapterOneForm variant="cream" buttonLabel="Send me Chapter 1" />
             <p className="mt-3 text-xs text-ink/55">
@@ -52,7 +70,18 @@ export function Hero() {
             <WaitlistButton size="md" />
           </div>
 
-          <div className="mt-14 max-w-md">
+          {/* Trust strip: a hairline-bordered row of mini-stats. Reads
+              as "what's in the book" credibility before the reader
+              scrolls into the deeper book description. */}
+          <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 border-t border-ink/10 pt-5 text-[11px] uppercase tracking-[0.06em] text-ink/55">
+            {TRUST_STATS.map(({ value, label }) => (
+              <span key={label}>
+                <strong className="font-semibold text-ink">{value}</strong> {label}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-12 max-w-md">
             <p className="text-xs font-semibold uppercase tracking-widest text-ink/65">By the author</p>
             <p className="mt-3 text-sm leading-relaxed text-ink/70">
               <span className="font-semibold text-ink">{site.author.name}</span> is the
@@ -108,7 +137,7 @@ export function Hero() {
           <div className="md:sticky md:top-28">
             <BookCover size="md" />
             <p className="mt-5 text-center text-[10px] font-semibold uppercase tracking-widest text-ink/65">
-              Cover mockup. Final art coming soon.
+              Cover mockup &middot; final art coming soon
             </p>
           </div>
         </motion.div>
