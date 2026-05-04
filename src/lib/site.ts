@@ -1,7 +1,7 @@
 export const site = {
   name: 'Dale Nirvani Pfeifer',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aifundraisingfornonprofits.com',
-  bookTitle: 'Artificial Intelligence for Nonprofit Fundraising',
+  bookTitle: 'AI for Nonprofit Fundraising',
   bookSubtitle: 'How to Use AI to Raise More Money, Ethically and Effectively',
   publishMonth: 'June 2026',
   publishDate: '2026-06-15', // placeholder, replace with confirmed date
@@ -58,12 +58,12 @@ export const site = {
   // cite. Aim for ~600 chars — long enough for substance, short
   // enough to render fully in snippet previews.
   authorBio:
-    'Dale Nirvani Pfeifer is the CEO of Giving Compass, a philanthropic intelligence platform reaching more than two million donors annually and powering AI-enabled data infrastructure for foundations, donor-advised fund platforms, wealth advisors, and nonprofits. She is the author of Artificial Intelligence for Nonprofit Fundraising (June 2026) and writes and speaks regularly on AI for nonprofit fundraising, AI fundraising tools, and how artificial intelligence is reshaping donor behavior and nonprofit visibility.',
+    'Dale Nirvani Pfeifer is the CEO of Giving Compass, a philanthropic intelligence platform reaching more than two million donors annually and powering AI-enabled data infrastructure for foundations, donor-advised fund platforms, wealth advisors, and nonprofits. She is the author of AI for Nonprofit Fundraising (June 2026) and writes and speaks regularly on AI for nonprofit fundraising, AI fundraising tools, and how artificial intelligence is reshaping donor behavior and nonprofit visibility.',
   // Long-form book description used in Book.description and Book.abstract.
   // Front-loads the audience and outcomes — the AI-search-optimal pattern
   // for "is this book for me / what will I learn" queries.
   bookDescription:
-    'Artificial Intelligence for Nonprofit Fundraising is the practical guide for nonprofit CEOs, development directors, and grant writers who want to raise more money using AI. The audience will learn concrete workflows for AI grant writing, prospect research, donor communications, and impact storytelling, along with a current map of the AI fundraising tools landscape. Key takeaways include step-by-step playbooks for high-impact use cases, frameworks for measuring outcomes, and the team structures that make AI adoption stick.',
+    'AI for Nonprofit Fundraising is the practical guide for nonprofit CEOs, development directors, and grant writers who want to raise more money using AI. The audience will learn concrete workflows for AI grant writing, prospect research, donor communications, and impact storytelling, along with a current map of the AI fundraising tools landscape. Key takeaways include step-by-step playbooks for high-impact use cases, frameworks for measuring outcomes, and the team structures that make AI adoption stick.',
   author: {
     name: 'Dale Nirvani Pfeifer',
     role: 'CEO, Giving Compass',

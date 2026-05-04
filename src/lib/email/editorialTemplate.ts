@@ -195,7 +195,7 @@ ${preheaderHtml}
             <p style="margin:8px 0 0; ${muted}">
               Dale Nirvani Pfeifer<br>
               CEO, Giving Compass<br>
-              Author, <em style="font-style:italic;">Artificial Intelligence for Nonprofit Fundraising</em> (June 2026)
+              Author, <em style="font-style:italic;">AI for Nonprofit Fundraising</em> (June 2026)
             </p>
           </td>
         </tr>
@@ -244,7 +244,7 @@ Dale
 
 Dale Nirvani Pfeifer
 CEO, Giving Compass
-Author, Artificial Intelligence for Nonprofit Fundraising (June 2026)
+Author, AI for Nonprofit Fundraising (June 2026)
 
 ${footerNote}`;
 

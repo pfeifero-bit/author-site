@@ -27,8 +27,8 @@ export function Hero() {
           </p>
 
           <h1 className="text-balance text-[2.75rem] leading-[1.02] tracking-tight md:text-6xl lg:text-[4.25rem]">
-            <span className="block font-extrabold text-ink">Artificial Intelligence</span>
-            <span className="block font-medium text-accent-on-cream">for Nonprofit Fundraising</span>
+            <span className="block font-extrabold text-ink">AI for Nonprofit</span>
+            <span className="block font-medium text-accent-on-cream">Fundraising</span>
           </h1>
 
           <p className="mt-8 max-w-[36rem] text-pretty text-lg leading-relaxed text-ink/75 md:text-xl">
