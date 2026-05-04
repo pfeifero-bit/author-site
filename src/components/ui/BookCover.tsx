@@ -37,16 +37,9 @@ export function BookCover({ size = 'md', className = '' }: { size?: Size; classN
         aria-label={`Cover mockup. ${site.bookTitle}, by ${site.author.name}.`}
       >
         <div className="flex h-full flex-col justify-between p-6 text-cream md:p-7">
-          {/* Top block: small eyebrow with hairline rule, then the
-              tagline below. The eyebrow is a positioning beat ("this is
-              a practical playbook"); the tagline is the promise. */}
+          {/* Top tagline. The book's promise stated in two lines, set
+              in small uppercase to read as a publisher's tagline. */}
           <div>
-            <div className="mb-2 flex items-center gap-2">
-              <span aria-hidden className="h-px w-4 bg-accent-on-navy" />
-              <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-accent-on-navy">
-                A practical playbook
-              </span>
-            </div>
             <p className={`${s.subtitle} font-semibold uppercase leading-[1.5] tracking-widest text-cream/85`}>
               Raise More Money,
               <br />
