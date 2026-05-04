@@ -9,7 +9,7 @@ import { buildProfilePageSchema, jsonLdScript } from '@/lib/jsonLd';
 export const metadata = buildMetadata({
   title: 'Dale Nirvani Pfeifer | AI, Fundraising, and Philanthropy',
   description:
-    'CEO of Giving Compass and author of Artificial Intelligence for Nonprofit Fundraising. Writing and speaking on AI, judgment, and donor trust.',
+    'CEO of Giving Compass and author of AI for Nonprofit Fundraising. Writing and speaking on AI, judgment, and donor trust.',
   url: `${site.url}/about`,
   ogType: 'profile',
 });

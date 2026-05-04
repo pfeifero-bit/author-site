@@ -107,7 +107,7 @@ export default function PostPage({ params }: { params: Params }) {
             href="/the-book"
             className="underline decoration-accent-on-cream decoration-1 underline-offset-4 hover:text-ink"
           >
-            <span className="italic">Artificial Intelligence for Nonprofit Fundraising</span>
+            <span className="italic">AI for Nonprofit Fundraising</span>
           </Link>
           .
         </p>

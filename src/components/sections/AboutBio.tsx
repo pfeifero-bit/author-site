@@ -45,7 +45,7 @@ export function AboutBio() {
               the patient construction of long-term relationships.
             </p>
             <p>
-              <span className="italic">Artificial Intelligence for Nonprofit Fundraising</span> is
+              <span className="italic">AI for Nonprofit Fundraising</span> is
               the book she wished existed when she first started talking to nonprofit leaders about
               AI. It is written for fundraisers who want practical answers, not hype, and who hold
               trust as seriously as targets.

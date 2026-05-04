@@ -78,7 +78,7 @@ function buildDay0(): RenderedEmail {
       cta: { text: 'Download Chapter 1 (PDF)', url: pdfUrl },
       bodyHtml: [
         'Hi,',
-        'Thanks for grabbing the first chapter of <em style="font-style:italic;">Artificial Intelligence for Nonprofit Fundraising</em>.',
+        'Thanks for grabbing the first chapter of <em style="font-style:italic;">AI for Nonprofit Fundraising</em>.',
         'Chapter 1, <em style="font-style:italic;">Why Judgment Is Becoming the Differentiator</em>, sets up the central argument of the book and the three workflow shifts that are quietly redefining fundraising work in 2026.',
         '<strong>One thing to watch for as you read it.</strong>',
         'When I started this book, the dominant question in the sector was <em style="font-style:italic;">should we adopt AI?</em> Eighteen months later, that question is mostly settled. The real question now is <em style="font-style:italic;">which decisions are we comfortable letting AI shape, and which ones do we protect?</em> That shift, from adoption to allocation, is what the rest of the book is built around.',
@@ -88,7 +88,7 @@ function buildDay0(): RenderedEmail {
       ],
       bodyText: [
         'Hi,',
-        'Thanks for grabbing the first chapter of Artificial Intelligence for Nonprofit Fundraising.',
+        'Thanks for grabbing the first chapter of AI for Nonprofit Fundraising.',
         'Chapter 1, Why Judgment Is Becoming the Differentiator, sets up the central argument of the book and the three workflow shifts that are quietly redefining fundraising work in 2026.',
         'One thing to watch for as you read it.',
         'When I started this book, the dominant question in the sector was should we adopt AI? Eighteen months later, that question is mostly settled. The real question now is which decisions are we comfortable letting AI shape, and which ones do we protect? That shift, from adoption to allocation, is what the rest of the book is built around.',
