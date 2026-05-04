@@ -6,11 +6,6 @@ import { BookCover } from '@/components/ui/BookCover';
 import { WaitlistButton } from '@/components/site/WaitlistButton';
 import { ChapterOneForm } from '@/components/site/ChapterOneForm';
 
-// Pre-orders gating. When NEXT_PUBLIC_PREORDERS_LIVE === 'true', the
-// retailer row shows clickable links. Default false (and any value other
-// than the literal string "true" is treated as false).
-const PREORDERS_LIVE = process.env.NEXT_PUBLIC_PREORDERS_LIVE === 'true';
-
 // Trust strip data shown between the waitlist button and the author
 // bio. Numbers reflect the actual book per the TOC on /the-book.
 // Keep in sync if scope changes.
@@ -98,34 +93,14 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Retailer row. Hidden until pre-orders open. Toggled via
-              NEXT_PUBLIC_PREORDERS_LIVE. When live, each retailer becomes
-              a clickable link to that retailer's pre-order page (URLs
-              live in src/lib/site.ts). */}
-          {PREORDERS_LIVE && (
-            <div className="mt-14">
-              <p className="text-xs font-semibold uppercase tracking-widest text-ink/65">
-                Available everywhere books are sold
-              </p>
-              <ul className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-                {site.retailers.map((r, i) => (
-                  <li key={r.name} className="flex items-center gap-6">
-                    <a
-                      href={r.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-ink/80 underline decoration-accent-on-cream decoration-1 underline-offset-4 transition hover:text-ink"
-                    >
-                      {r.name}
-                    </a>
-                    {i < site.retailers.length - 1 && (
-                      <span aria-hidden className="text-ink/20">/</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {/* Retailer line. Pre-launch placeholder — once the Amazon
+              listing is live, swap the <span> for an <a href="..."> with
+              the real URL and update the copy from "Available soon" to
+              "Available on" or "Pre-order on" depending on state. */}
+          <p className="mt-14 text-xs font-semibold uppercase tracking-widest text-ink/65">
+            Available soon on{' '}
+            <span className="font-bold tracking-wider text-ink">AMAZON.COM</span>
+          </p>
         </motion.div>
 
         <motion.div
