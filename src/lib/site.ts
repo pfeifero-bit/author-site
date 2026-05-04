@@ -2,7 +2,7 @@ export const site = {
   name: 'Dale Nirvani Pfeifer',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aifundraisingfornonprofits.com',
   bookTitle: 'AI for Nonprofit Fundraising',
-  bookSubtitle: 'How to Use AI to Raise More Money, Ethically and Effectively',
+  bookSubtitle: 'Raise More Money, Ethically and Effectively',
   publishMonth: 'June 2026',
   publishDate: '2026-06-15', // placeholder, replace with confirmed date
   description:

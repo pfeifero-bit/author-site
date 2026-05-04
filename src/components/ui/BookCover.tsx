@@ -39,9 +39,9 @@ export function BookCover({ size = 'md', className = '' }: { size?: Size; classN
         <div className="flex h-full flex-col justify-between p-6 text-cream md:p-7">
           <div>
             <p className={`${s.subtitle} font-semibold uppercase tracking-widest text-cream/85`}>
-              How to Use AI to Raise More
+              Raise More Money,
               <br />
-              Money, Ethically and Effectively
+              Ethically and Effectively
             </p>
           </div>
 
