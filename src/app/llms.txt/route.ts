@@ -40,10 +40,11 @@ function buildLlmsTxt(): string {
   lines.push('## Core pages');
   lines.push('');
   lines.push(`- [Home](${site.url}/): Overview, free Chapter 1 download, author bio.`);
-  lines.push(`- [The Book](${site.url}/the-book): Book details, sample chapter, key topics.`);
+  lines.push(`- [The Book](${site.url}/the-book): Book details, sample chapter, key topics, FAQ.`);
+  lines.push(`- [Work with us](${site.url}/work-with-us): Advisory work with ${site.author.name}. AI fundraising strategy, governance, and adoption for nonprofits, foundations, and philanthropy platforms. Includes FAQ.`);
   lines.push(`- [About](${site.url}/about): Full bio of ${site.author.name}.`);
   lines.push(`- [Insights](${site.url}/insights): Field notes on AI and philanthropy.`);
-  lines.push(`- [Contact](${site.url}/contact): Speaking, advisory, and press inquiries.`);
+  lines.push(`- [Contact](${site.url}/contact): Press and general inquiries.`);
   lines.push('');
 
   lines.push('## Topics covered');

@@ -80,6 +80,7 @@ export const site = {
     { href: '/the-book', label: 'The Book' },
     { href: '/about', label: 'About' },
     { href: '/insights', label: 'Insights' },
+    { href: '/work-with-us', label: 'Work with us' },
     { href: '/contact', label: 'Contact' },
   ],
 };
