@@ -46,6 +46,7 @@ export async function POST(req: Request) {
   const subjectByType: Record<string, string> = {
     speaking: `New speaking inquiry from ${name}`,
     contact: `New contact form message from ${name}`,
+    advisory: `New advisory inquiry from ${name}`,
     general: `New inquiry from ${name}`,
   };
   const subject = subjectByType[type] ?? subjectByType.general;

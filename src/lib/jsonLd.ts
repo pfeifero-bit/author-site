@@ -95,6 +95,45 @@ export function buildBookSchema() {
 }
 
 /**
+ * ProfessionalService schema for the /work-with-us advisory page.
+ * Tells AI search and Google that this site offers a defined service
+ * (AI fundraising advisory) provided by a named Person, with explicit
+ * service categories. Helps the page surface for queries like "AI
+ * fundraising consultant", "nonprofit AI advisor", etc.
+ */
+export function buildProfessionalServiceSchema() {
+  return {
+    '@context': SCHEMA,
+    '@type': 'ProfessionalService',
+    '@id': `${site.url}/work-with-us#service`,
+    name: `${site.author.name} Advisory`,
+    description:
+      'AI fundraising advisory for nonprofits, foundations, and philanthropy platforms. Strategy, governance, and AI adoption without losing donor trust.',
+    url: `${site.url}/work-with-us`,
+    image: OG_IMAGE,
+    areaServed: 'Worldwide',
+    serviceType: [
+      'AI fundraising strategy advisory',
+      'AI governance and policy development',
+      'Keynote speaking',
+      'Workshops and team training',
+    ],
+    founder: {
+      '@type': 'Person',
+      '@id': `${site.url}#person`,
+      name: site.author.name,
+      jobTitle: `Author, ${site.bookTitle}`,
+      sameAs: [site.author.linkedin],
+    },
+    provider: {
+      '@type': 'Person',
+      '@id': `${site.url}#person`,
+      name: site.author.name,
+    },
+  } as const;
+}
+
+/**
  * FAQPage schema. Q&A content is cited heavily by AI search — when
  * someone asks ChatGPT/Perplexity/Claude a question that matches one
  * of these, the answer is a strong candidate for inclusion in the
