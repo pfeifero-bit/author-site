@@ -1,3 +1,12 @@
+// Feature flag: when true, /work-with-us is reachable and surfaces in
+// nav, sitemap, llms.txt, and the /about CTA. When false (default),
+// the page returns notFound(), the route is excluded from sitemaps,
+// disallowed in robots.txt, hidden from nav, and the /about CTA falls
+// back to the original two-button layout. Flip via Vercel env var:
+// NEXT_PUBLIC_WORK_WITH_US_LIVE=true (then redeploy).
+export const WORK_WITH_US_LIVE =
+  process.env.NEXT_PUBLIC_WORK_WITH_US_LIVE === 'true';
+
 export const site = {
   name: 'Dale Nirvani Pfeifer',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aifundraisingfornonprofits.com',
@@ -80,7 +89,9 @@ export const site = {
     { href: '/the-book', label: 'The Book' },
     { href: '/about', label: 'About' },
     { href: '/insights', label: 'Insights' },
-    { href: '/work-with-us', label: 'Work with us' },
+    // /work-with-us is only surfaced in nav when the live flag is on.
+    // See WORK_WITH_US_LIVE export above.
+    ...(WORK_WITH_US_LIVE ? [{ href: '/work-with-us', label: 'Work with us' }] : []),
     { href: '/contact', label: 'Contact' },
   ],
 };

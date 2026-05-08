@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { site } from '@/lib/site';
+import { notFound } from 'next/navigation';
+import { site, WORK_WITH_US_LIVE } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
 import {
   buildProfessionalServiceSchema,
@@ -35,17 +36,24 @@ import { WorkInquiryForm } from '@/components/site/WorkInquiryForm';
  * main return so it can be uncommented once content lands.
  */
 
-export const metadata: Metadata = buildMetadata({
-  title: 'AI Fundraising Advisor & Speaker | Dale Nirvani Pfeifer',
-  description:
-    'Advisory work with Dale Nirvani Pfeifer, author of AI for Nonprofit Fundraising. Strategy, governance, and AI adoption for nonprofits, foundations, and philanthropy platforms.',
-  url: `${site.url}/work-with-us`,
-});
+export const metadata: Metadata = WORK_WITH_US_LIVE
+  ? buildMetadata({
+      title: 'AI Fundraising Advisor & Speaker | Dale Nirvani Pfeifer',
+      description:
+        'Advisory work with Dale Nirvani Pfeifer, author of AI for Nonprofit Fundraising. Strategy, governance, and AI adoption for nonprofits, foundations, and philanthropy platforms.',
+      url: `${site.url}/work-with-us`,
+    })
+  : { robots: { index: false, follow: false } };
 
 const professionalServiceSchema = buildProfessionalServiceSchema();
 const faqSchema = buildFaqSchema(workFaq);
 
 export default function WorkWithUsPage() {
+  // Page is paused. Returns 404 when the flag is off so the route is
+  // unreachable. Flip NEXT_PUBLIC_WORK_WITH_US_LIVE=true in Vercel +
+  // redeploy to bring the page back. All content stays in the repo.
+  if (!WORK_WITH_US_LIVE) notFound();
+
   return (
     <>
       {/* JSON-LD: ProfessionalService + FAQPage. Both rendered as
