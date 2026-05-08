@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { site } from '@/lib/site';
+import { site, WORK_WITH_US_LIVE } from '@/lib/site';
 
 /**
  * Robots configuration.
@@ -61,16 +61,25 @@ const AI_CRAWLERS = [
 export default function robots(): MetadataRoute.Robots {
   const base = site.url.replace(/\/$/, '');
 
+  // Disallow list:
+  //   /api/*        server endpoints, not pages.
+  //   /thank-you    post-conversion destination (also noindex via metadata).
+  //   /speaking     returns notFound() until restored.
+  //   /work-with-us added when paused via WORK_WITH_US_LIVE flag so
+  //                 crawlers do not index a 404 that may come back later.
+  const disallow = [
+    '/api/',
+    '/thank-you',
+    '/speaking',
+    ...(WORK_WITH_US_LIVE ? [] : ['/work-with-us']),
+  ];
+
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        // /api/* are server endpoints, not pages.
-        // /thank-you is a post-conversion destination and should not
-        // appear in search results (already noindex via metadata).
-        // /speaking currently returns notFound() and should not be crawled.
-        disallow: ['/api/', '/thank-you', '/speaking'],
+        disallow,
       },
       // Explicit allows for AI crawlers. Each gets its own rule so we
       // can selectively disable any one in the future without touching
@@ -78,7 +87,7 @@ export default function robots(): MetadataRoute.Robots {
       ...AI_CRAWLERS.map((userAgent) => ({
         userAgent,
         allow: '/',
-        disallow: ['/api/', '/thank-you', '/speaking'],
+        disallow,
       })),
     ],
     sitemap: `${base}/sitemap.xml`,
