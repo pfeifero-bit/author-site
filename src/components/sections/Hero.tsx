@@ -33,8 +33,8 @@ export function Hero() {
           </p>
 
           <h1 className="text-balance text-[2.75rem] leading-[1.02] tracking-tight md:text-6xl lg:text-[4.25rem]">
-            <span className="block font-extrabold text-ink">AI for Nonprofit</span>
-            <span className="block font-medium text-accent-on-cream">Fundraising</span>
+            <span className="block font-extrabold text-ink">Artificial Intelligence</span>
+            <span className="block font-medium text-accent-on-cream">Fundraising for Nonprofits</span>
           </h1>
 
           {/* Author byline. Small uppercase line that sits between the

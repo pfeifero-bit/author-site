@@ -20,7 +20,7 @@ const items: Item[] = [
   },
   {
     kind: 'Book',
-    title: 'AI for Nonprofit Fundraising',
+    title: 'Artificial Intelligence Fundraising for Nonprofits',
     outlet: 'Independently published',
     year: '2026',
     href: '/the-book',
