@@ -17,9 +17,9 @@
  */
 export const bookFaq = [
   {
-    question: 'What is AI for Nonprofit Fundraising about?',
+    question: 'What is Artificial Intelligence Fundraising for Nonprofits about?',
     answer:
-      'AI for Nonprofit Fundraising is a practical guide to using AI fundraising tools and workflows to raise more money, work more efficiently, and engage donors more effectively. The book covers AI grant writing, prospect research, donor communications, impact storytelling, and the operational shifts development teams need to make to integrate AI responsibly into their fundraising work.',
+      'Artificial Intelligence Fundraising for Nonprofits is a practical guide to using AI fundraising tools and workflows to raise more money, work more efficiently, and engage donors more effectively. The book covers AI grant writing, prospect research, donor communications, impact storytelling, and the operational shifts development teams need to make to integrate AI responsibly into their fundraising work.',
   },
   {
     question: 'Who is the book for?',
@@ -44,7 +44,7 @@ export const bookFaq = [
   {
     question: 'When does the book publish?',
     answer:
-      'AI for Nonprofit Fundraising publishes in June 2026.',
+      'Artificial Intelligence Fundraising for Nonprofits publishes in June 2026.',
   },
   {
     question: 'Who is the author?',

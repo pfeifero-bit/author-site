@@ -6,21 +6,21 @@ const sizes: Record<Size, { container: string; subtitle: string; title: string; 
   sm: {
     container: 'max-w-[14rem]',
     subtitle: 'text-[8px]',
-    title: 'text-[3rem] md:text-[3.3rem]',
+    title: 'text-[1.5rem] md:text-[1.65rem]',
     secondary: 'text-[1rem] md:text-[1.1rem]',
     byline: 'text-[9px]',
   },
   md: {
     container: 'max-w-[20rem]',
     subtitle: 'text-[10px]',
-    title: 'text-[4rem] md:text-[4.5rem]',
+    title: 'text-[2rem] md:text-[2.25rem]',
     secondary: 'text-[1.4rem] md:text-[1.55rem]',
     byline: 'text-[11px]',
   },
   lg: {
     container: 'max-w-[24rem]',
     subtitle: 'text-[11px]',
-    title: 'text-[4.8rem] md:text-[5.4rem]',
+    title: 'text-[2.4rem] md:text-[2.7rem]',
     secondary: 'text-[1.7rem] md:text-[1.85rem]',
     byline: 'text-[12px]',
   },
@@ -47,14 +47,15 @@ export function BookCover({ size = 'md', className = '' }: { size?: Size; classN
             </p>
           </div>
 
-          {/* Title block. "AI" sits as the dominant element; a short
-              hairline rule separates it from the qualifier "for Nonprofit
-              / Fundraising" rendered in the accent color. */}
+          {/* Title block. Editorial two-tone treatment matching the site
+              hero: "Artificial / Intelligence" extrabold in cream, then
+              "Fundraising / for Nonprofits" in the accent color. The
+              four-line stack reads as a serious nonfiction cover. */}
           <div className="flex flex-col items-start gap-1">
-            <p className={`${s.title} font-extrabold leading-[0.9] tracking-[-0.02em] text-cream`}>AI</p>
-            <span aria-hidden className="my-2 h-0.5 w-8 bg-accent-on-navy" />
-            <p className={`${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>for Nonprofit</p>
-            <p className={`${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>Fundraising</p>
+            <p className={`${s.title} font-extrabold leading-[0.95] text-cream`}>Artificial</p>
+            <p className={`${s.title} font-extrabold leading-[0.95] text-cream`}>Intelligence</p>
+            <p className={`mt-2 ${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>Fundraising</p>
+            <p className={`${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>for Nonprofits</p>
           </div>
 
           <div>
