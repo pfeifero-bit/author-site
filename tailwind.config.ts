@@ -31,14 +31,13 @@ const config: Config = {
           300: '#e3d8c2',
           400: '#cfbf9f',
         },
-        // Two surface-tuned accent blues. The single previous accent (a
-        // washed-out periwinkle) had insufficient contrast on cream. Now:
-        //   accent-on-cream: dark blue, WCAG AA on cream (~6.5:1 at 16px)
-        //   accent-on-navy:  light blue, comfortable contrast on navy
-        // Use the variant matching the surface the element sits on.
+        // Two surface-tuned accent greens. Use the variant matching the
+        // surface the element sits on:
+        //   accent-on-cream: deep green, WCAG AA on cream
+        //   accent-on-navy:  bright lime-green, comfortable on navy
         accent: {
-          'on-cream': '#2D5BA8',
-          'on-navy': '#6B9FE0',
+          'on-cream': '#3d6b09',
+          'on-navy': '#8cc83c',
         },
       },
       fontFamily: {

@@ -143,7 +143,7 @@ function buildDay10(): RenderedEmail {
   // Pre-order CTA only when pre-orders are live; otherwise soft fallback
   // copy invites a reply.
   const preorderHtml = PREORDERS_LIVE
-    ? `It comes out in June. You can <a href="${getPreorderUrl()}" style="color:#2D5BA8; text-decoration:underline;">pre-order here</a>.`
+    ? `It comes out in June. You can <a href="${getPreorderUrl()}" style="color:#3d6b09; text-decoration:underline;">pre-order here</a>.`
     : 'Pre-orders open this month. Reply with "notify me" and I will send the link the moment they go live.';
   const preorderText = PREORDERS_LIVE
     ? `It comes out in June. You can pre-order here: ${getPreorderUrl()}`
@@ -191,7 +191,7 @@ function buildDay10(): RenderedEmail {
 function buildDay30(): RenderedEmail {
   const pdfUrl = getPdfUrl();
   const preorderHtml = PREORDERS_LIVE
-    ? `And if the chapter was useful, the book has a lot more of it. Pre-orders are open <a href="${getPreorderUrl()}" style="color:#2D5BA8; text-decoration:underline;">here</a>.`
+    ? `And if the chapter was useful, the book has a lot more of it. Pre-orders are open <a href="${getPreorderUrl()}" style="color:#3d6b09; text-decoration:underline;">here</a>.`
     : 'Pre-orders open soon. Reply with "notify me" and I will send the link the moment they go live.';
   const preorderText = PREORDERS_LIVE
     ? `And if the chapter was useful, the book has a lot more of it. Pre-orders are open here: ${getPreorderUrl()}`
@@ -213,7 +213,7 @@ function buildDay30(): RenderedEmail {
       '<strong>Two reasons I am asking.</strong>',
       'First, the patterns in those replies become the next thing I write. The most useful pieces I have published in the last year started with a sentence somebody emailed me. Your experience is more valuable than another report.',
       'Second, if you are doing something interesting with AI in your fundraising work, I would like to feature a handful of stories around the book launch in June. Real teams, real workflows, real results. Anonymous if you prefer. If that is you, just say so in your reply and I will follow up.',
-      `If you have not had a chance to read the chapter yet, no judgment. Here it is again: <a href="${pdfUrl}" style="color:#2D5BA8; text-decoration:underline;">${pdfUrl}</a>. The exercise at the end is still the highest-leverage twenty minutes you can spend on AI readiness this quarter.`,
+      `If you have not had a chance to read the chapter yet, no judgment. Here it is again: <a href="${pdfUrl}" style="color:#3d6b09; text-decoration:underline;">${pdfUrl}</a>. The exercise at the end is still the highest-leverage twenty minutes you can spend on AI readiness this quarter.`,
       preorderHtml,
       'Thanks for being on this list.',
     ],
