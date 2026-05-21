@@ -57,7 +57,7 @@ export type EditorialEmailContent = {
 const COLOR = {
   cream: '#FAF7F1',
   ink: '#0E1B3F',
-  accentOnCream: '#2D5BA8',
+  accentOnCream: '#3d6b09',
   muted: '#5A6478',
   ruleOnCream: '#0E1B3F26',
 } as const;
