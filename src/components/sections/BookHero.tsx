@@ -23,7 +23,7 @@ export function BookHero() {
 
           <h1 className="text-balance text-5xl font-extrabold leading-[1.02] tracking-tight md:text-6xl lg:text-[4rem]">
             <span className="block">Artificial Intelligence</span>
-            <span className="block font-medium text-accent-on-cream">Fundraising for Nonprofits</span>
+            <span className="block font-medium text-accent-on-cream">for Nonprofit Fundraising</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-pretty text-base font-medium leading-relaxed text-ink/80 md:text-lg">
@@ -55,9 +55,6 @@ export function BookHero() {
         >
           <div className="md:sticky md:top-28">
             <BookCover size="md" />
-            <p className="mt-5 text-center text-[10px] font-semibold uppercase tracking-widest text-ink/65">
-              Cover mockup. Final art coming soon.
-            </p>
           </div>
         </motion.div>
       </div>

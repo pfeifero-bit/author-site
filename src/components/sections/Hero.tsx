@@ -34,7 +34,7 @@ export function Hero() {
 
           <h1 className="text-balance text-[2.75rem] leading-[1.02] tracking-tight md:text-6xl lg:text-[4.25rem]">
             <span className="block font-extrabold text-ink">Artificial Intelligence</span>
-            <span className="block font-medium text-accent-on-cream">Fundraising for Nonprofits</span>
+            <span className="block font-medium text-accent-on-cream">for Nonprofit Fundraising</span>
           </h1>
 
           {/* Author byline. Small uppercase line that sits between the
@@ -111,9 +111,6 @@ export function Hero() {
         >
           <div className="md:sticky md:top-28">
             <BookCover size="md" />
-            <p className="mt-5 text-center text-[10px] font-semibold uppercase tracking-widest text-ink/65">
-              Cover mockup &middot; final art coming soon
-            </p>
           </div>
         </motion.div>
       </div>

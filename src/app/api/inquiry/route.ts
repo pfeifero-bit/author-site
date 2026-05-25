@@ -17,9 +17,9 @@ function fieldsToHtml(fields: Record<string, unknown>) {
     .filter(([, v]) => v !== undefined && v !== null && v !== '')
     .map(
       ([k, v]) =>
-        `<tr><td style="padding:6px 12px 6px 0;font-weight:600;vertical-align:top;color:#0e1b3f">${escapeHtml(
+        `<tr><td style="padding:6px 12px 6px 0;font-weight:600;vertical-align:top;color:#151a2d">${escapeHtml(
           k,
-        )}</td><td style="padding:6px 0;color:#0e1b3f">${escapeHtml(String(v))}</td></tr>`,
+        )}</td><td style="padding:6px 0;color:#151a2d">${escapeHtml(String(v))}</td></tr>`,
     )
     .join('');
 }
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
   if (resendKey && recipient) {
     try {
       const html = `
-        <table style="font-family:ui-sans-serif,system-ui,sans-serif;font-size:14px;color:#0e1b3f;line-height:1.55">
+        <table style="font-family:ui-sans-serif,system-ui,sans-serif;font-size:14px;color:#151a2d;line-height:1.55">
           <tbody>${fieldsToHtml({ type, ...body })}</tbody>
         </table>
         <p style="margin-top:18px;color:#516494;font-size:12px">Sent from dalenpfeifer.com</p>

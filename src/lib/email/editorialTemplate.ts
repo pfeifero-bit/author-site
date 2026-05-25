@@ -56,10 +56,10 @@ export type EditorialEmailContent = {
 // site palette changes.
 const COLOR = {
   cream: '#FAF7F1',
-  ink: '#0E1B3F',
-  accentOnCream: '#3d6b09',
+  ink: '#151a2d',
+  accentOnCream: '#5b7000',
   muted: '#5A6478',
-  ruleOnCream: '#0E1B3F26',
+  ruleOnCream: '#151a2d26',
 } as const;
 
 const FONT_STACK =
@@ -195,7 +195,7 @@ ${preheaderHtml}
             <p style="margin:8px 0 0; ${muted}">
               Dale Nirvani Pfeifer<br>
               CEO, Giving Compass<br>
-              Author, <em style="font-style:italic;">Artificial Intelligence Fundraising for Nonprofits</em> (June 2026)
+              Author, <em style="font-style:italic;">Artificial Intelligence for Nonprofit Fundraising</em> (June 2026)
             </p>
           </td>
         </tr>
@@ -244,7 +244,7 @@ Dale
 
 Dale Nirvani Pfeifer
 CEO, Giving Compass
-Author, Artificial Intelligence Fundraising for Nonprofits (June 2026)
+Author, Artificial Intelligence for Nonprofit Fundraising (June 2026)
 
 ${footerNote}`;
 

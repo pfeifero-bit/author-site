@@ -1,70 +1,42 @@
+import Image from 'next/image';
 import { site } from '@/lib/site';
 
 type Size = 'sm' | 'md' | 'lg';
 
-const sizes: Record<Size, { container: string; subtitle: string; title: string; secondary: string; byline: string }> = {
-  sm: {
-    container: 'max-w-[14rem]',
-    subtitle: 'text-[8px]',
-    title: 'text-[1.5rem] md:text-[1.65rem]',
-    secondary: 'text-[1rem] md:text-[1.1rem]',
-    byline: 'text-[9px]',
-  },
-  md: {
-    container: 'max-w-[20rem]',
-    subtitle: 'text-[10px]',
-    title: 'text-[2rem] md:text-[2.25rem]',
-    secondary: 'text-[1.4rem] md:text-[1.55rem]',
-    byline: 'text-[11px]',
-  },
-  lg: {
-    container: 'max-w-[24rem]',
-    subtitle: 'text-[11px]',
-    title: 'text-[2.4rem] md:text-[2.7rem]',
-    secondary: 'text-[1.7rem] md:text-[1.85rem]',
-    byline: 'text-[12px]',
-  },
+/**
+ * Display widths per size variant. The image keeps the cover's natural
+ * 2:3 aspect ratio, so height is implicit. These match the legacy
+ * mockup sizes so layout doesn't shift in any consumer.
+ */
+const sizes: Record<Size, { container: string }> = {
+  sm: { container: 'max-w-[14rem]' },
+  md: { container: 'max-w-[20rem]' },
+  lg: { container: 'max-w-[24rem]' },
 };
+
+/**
+ * Cover image is shipped at /public/images/book-cover.jpg (831 × 1246
+ * native). Next/Image will serve appropriately-sized variants per
+ * viewport and per `size`.
+ */
+const COVER_SRC = '/images/book-cover.jpg';
+const COVER_NATIVE_WIDTH = 831;
+const COVER_NATIVE_HEIGHT = 1246;
 
 export function BookCover({ size = 'md', className = '' }: { size?: Size; className?: string }) {
   const s = sizes[size];
 
   return (
     <div className={`relative mx-auto ${s.container} ${className}`}>
-      <div
+      <Image
+        src={COVER_SRC}
+        width={COVER_NATIVE_WIDTH}
+        height={COVER_NATIVE_HEIGHT}
+        alt={`${site.bookTitle}, by ${site.author.name}`}
+        priority={size === 'md' || size === 'lg'}
+        sizes="(min-width: 1024px) 24rem, (min-width: 768px) 20rem, 90vw"
         className="aspect-[2/3] w-full overflow-hidden rounded-sm bg-ink shadow-[0_30px_80px_-25px_rgba(14,27,63,0.65)] ring-1 ring-ink/20"
-        role="img"
-        aria-label={`Cover mockup. ${site.bookTitle}, by ${site.author.name}.`}
-      >
-        <div className="flex h-full flex-col justify-between p-6 text-cream md:p-7">
-          {/* Top tagline. The book's promise stated in two lines, set
-              in small uppercase to read as a publisher's tagline. */}
-          <div>
-            <p className={`${s.subtitle} font-semibold uppercase leading-[1.5] tracking-widest text-cream/85`}>
-              Raise More Money,
-              <br />
-              Ethically and Effectively
-            </p>
-          </div>
-
-          {/* Title block. Editorial two-tone treatment matching the site
-              hero: "Artificial / Intelligence" extrabold in cream, then
-              "Fundraising / for Nonprofits" in the accent color. The
-              four-line stack reads as a serious nonfiction cover. */}
-          <div className="flex flex-col items-start gap-1">
-            <p className={`${s.title} font-extrabold leading-[0.95] text-cream`}>Artificial</p>
-            <p className={`${s.title} font-extrabold leading-[0.95] text-cream`}>Intelligence</p>
-            <p className={`mt-2 ${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>Fundraising</p>
-            <p className={`${s.secondary} font-medium leading-[1.05] text-accent-on-navy`}>for Nonprofits</p>
-          </div>
-
-          <div>
-            <p className={`${s.byline} font-medium uppercase tracking-widest text-cream/85`}>
-              {site.author.name}
-            </p>
-          </div>
-        </div>
-      </div>
+      />
     </div>
   );
 }

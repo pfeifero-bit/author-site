@@ -8,19 +8,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary navy, sampled from the book cover.
+        // Primary navy, sampled from the book cover (#151a2d).
         ink: {
-          DEFAULT: '#0e1b3f',
-          50:  '#f1f3f9',
-          100: '#dde2ee',
-          200: '#b9c2d9',
-          300: '#8593b6',
-          400: '#516494',
-          500: '#2f4576',
-          600: '#1f3056',
-          700: '#142142',
-          800: '#0e1b3f',
-          900: '#08122c',
+          DEFAULT: '#151a2d',
+          50:  '#f1f2f6',
+          100: '#dde0e9',
+          200: '#b8bdce',
+          300: '#8390a9',
+          400: '#516288',
+          500: '#2f436b',
+          600: '#1f2e4e',
+          700: '#192341',
+          800: '#151a2d',
+          900: '#0a0e1c',
         },
         // Warm off-white body background.
         cream: {
@@ -31,13 +31,15 @@ const config: Config = {
           300: '#e3d8c2',
           400: '#cfbf9f',
         },
-        // Two surface-tuned accent greens. Use the variant matching the
-        // surface the element sits on:
-        //   accent-on-cream: deep green, WCAG AA on cream
-        //   accent-on-navy:  bright lime-green, comfortable on navy
+        // Two surface-tuned accent greens, sampled from the book cover.
+        // Use the variant matching the surface the element sits on:
+        //   accent-on-cream: dark olive (#5b7000), darker variant of the
+        //                    lime, picks up WCAG AA contrast on cream.
+        //   accent-on-navy:  bright lime (#e6ff3f), the exact accent
+        //                    from the book cover. High contrast on navy.
         accent: {
-          'on-cream': '#3d6b09',
-          'on-navy': '#8cc83c',
+          'on-cream': '#5b7000',
+          'on-navy': '#e6ff3f',
         },
       },
       fontFamily: {
