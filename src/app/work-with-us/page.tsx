@@ -40,7 +40,7 @@ export const metadata: Metadata = WORK_WITH_US_LIVE
   ? buildMetadata({
       title: 'AI Fundraising Advisor & Speaker | Dale Nirvani Pfeifer',
       description:
-        'Advisory work with Dale Nirvani Pfeifer, author of Artificial Intelligence Fundraising for Nonprofits. Strategy, governance, and AI adoption for nonprofits, foundations, and philanthropy platforms.',
+        'Advisory work with Dale Nirvani Pfeifer, author of Artificial Intelligence for Nonprofit Fundraising. Strategy, governance, and AI adoption for nonprofits, foundations, and philanthropy platforms.',
       url: `${site.url}/work-with-us`,
     })
   : { robots: { index: false, follow: false } };
