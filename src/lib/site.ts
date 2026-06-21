@@ -13,7 +13,7 @@ export const site = {
   bookTitle: 'Artificial Intelligence for Nonprofit Fundraising',
   bookSubtitle: 'How to Use AI to Raise More Money, Ethically and Effectively',
   publishMonth: 'June 2026',
-  publishDate: '2026-06-15', // placeholder, replace with confirmed date
+  publishDate: '2026-06-21',
   description:
     'A practical playbook for nonprofit leaders ready to use AI to raise more, work smarter, and stay deeply human. By Dale Nirvani Pfeifer, CEO of Giving Compass.',
   tagline: 'Use AI to stay human under pressure.',
@@ -80,7 +80,7 @@ export const site = {
     company: { name: 'Giving Compass', url: 'https://givingcompass.org' },
   },
   retailers: [
-    { name: 'Amazon', url: '#' },
+    { name: 'Amazon', url: 'https://www.amazon.com/dp/B0H5TKL95T' },
     { name: 'Barnes & Noble', url: '#' },
     { name: 'Bookshop.org', url: '#' },
     { name: 'Audible', url: '#' },

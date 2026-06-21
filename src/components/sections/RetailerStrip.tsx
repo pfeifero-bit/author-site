@@ -13,7 +13,7 @@ export function RetailerStrip() {
       <div className="container-prose py-24 md:py-32">
         <header className="mx-auto max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent-on-navy">
-            Pre-order
+            Buy the book
           </p>
           <h2
             id="retailers-heading"
@@ -22,8 +22,7 @@ export function RetailerStrip() {
             Available everywhere books are sold.
           </h2>
           <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-cream/75">
-            Pre-orders signal the book to retailers and reviewers. They make a real difference
-            ahead of launch in {site.publishMonth}. Pick your retailer.
+            Pick your retailer below.
           </p>
         </header>
 
@@ -55,7 +54,7 @@ export function RetailerStrip() {
         </ul>
 
         <p className="mt-8 text-xs text-cream/70">
-          Retailer links populate as listings go live. If your store is not here, ask your
+          Additional retailer links coming soon. If your preferred store is not listed, ask your
           local independent bookseller to special-order through Bookshop.org.
         </p>
       </div>

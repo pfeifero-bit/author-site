@@ -5,19 +5,11 @@ import { TableOfContents } from '@/components/sections/TableOfContents';
 import { SampleChapter } from '@/components/sections/SampleChapter';
 import { Endorsement } from '@/components/sections/Endorsement';
 import { BookFaq } from '@/components/sections/BookFaq';
+import { RetailerStrip } from '@/components/sections/RetailerStrip';
 import { site } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
 import { buildFaqSchema, jsonLdScript } from '@/lib/jsonLd';
 import { bookFaq } from '@/lib/bookFaq';
-
-// BookEndorsements (the larger section with the placeholder grid for
-// forthcoming endorsements) is intentionally not used here. Just the
-// Meena Das foreword pull-quote via Endorsement. To restore the full
-// section, swap Endorsement for BookEndorsements below.
-//
-// RetailerStrip (the dark navy "Available everywhere books are sold"
-// pre-order section) is hidden for now. To restore, re-import
-// RetailerStrip and add <RetailerStrip /> after Endorsement below.
 
 export const metadata = buildMetadata({
   title: 'The Book | Artificial Intelligence for Nonprofit Fundraising',
@@ -45,6 +37,7 @@ export default function BookPage() {
       <TableOfContents />
       <SampleChapter />
       <Endorsement />
+      <RetailerStrip />
       <BookFaq />
     </>
   );

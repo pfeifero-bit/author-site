@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { site } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
-import { PreorderNotifyForm } from '@/components/sections/PreorderNotifyForm';
 import { ConversionEvents } from '@/components/site/ConversionEvents';
 
 export const metadata: Metadata = {
@@ -45,30 +44,31 @@ export default function ThankYouPage() {
         </p>
       </section>
 
-      {/* Soft pre-order CTA. Adds the visitor to a separate pre-order
-          notification segment in Resend (source="preorder-notify"), which
-          is set up to be flipped into a launch-day announcement when
-          pre-orders open. */}
       <section
-        aria-labelledby="preorder-notify"
+        aria-labelledby="buy-the-book"
         className="container-prose pb-16 md:pb-24"
       >
         <div className="rounded-md border border-ink/10 bg-cream-50 p-8 md:p-10">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-accent-on-cream">
-            Pre-orders
+            The book is out
           </p>
           <h2
-            id="preorder-notify"
+            id="buy-the-book"
             className="mt-4 max-w-2xl text-balance text-2xl font-extrabold leading-tight tracking-tight md:text-[1.75rem]"
           >
-            Pre-orders open in {site.publishMonth.split(' ')[0]}. Want to be the first to know?
+            Ready for the full playbook?
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/70">
-            One short note the day pre-orders open. Nothing else from this list until then.
+            <span className="italic">{site.bookTitle}</span> is available now on Amazon.
           </p>
-          <div className="mt-6 max-w-xl">
-            <PreorderNotifyForm />
-          </div>
+          <a
+            href="https://www.amazon.com/dp/B0H5TKL95T"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream transition hover:bg-ink-700"
+          >
+            Buy on Amazon &rarr;
+          </a>
         </div>
       </section>
 

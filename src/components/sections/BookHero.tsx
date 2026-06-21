@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { site } from '@/lib/site';
 import { BookCover } from '@/components/ui/BookCover';
-import { WaitlistButton } from '@/components/site/WaitlistButton';
 
 export function BookHero() {
   return (
@@ -18,7 +17,7 @@ export function BookHero() {
         >
           <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-ink/75">
             <span aria-hidden className="h-px w-6 bg-accent-on-cream" />
-            The book. Publishing {site.publishMonth}.
+            The book. Now available.
           </p>
 
           <h1 className="text-balance text-5xl font-extrabold leading-[1.02] tracking-tight md:text-6xl lg:text-[4rem]">
@@ -37,7 +36,14 @@ export function BookHero() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <WaitlistButton size="md" />
+            <a
+              href="https://www.amazon.com/dp/B0H5TKL95T"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream transition hover:bg-ink-700"
+            >
+              Buy on Amazon &rarr;
+            </a>
             <Link
               href="#sample"
               className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink/60"

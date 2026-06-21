@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { site } from '@/lib/site';
 import { BookCover } from '@/components/ui/BookCover';
-import { WaitlistButton } from '@/components/site/WaitlistButton';
 import { ChapterOneForm } from '@/components/site/ChapterOneForm';
 
 // Trust strip data shown between the waitlist button and the author
@@ -29,7 +28,7 @@ export function Hero() {
               editorial. The middle dot replaces a period. */}
           <p className="mb-7 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.18em] text-accent-on-cream">
             <span aria-hidden className="h-px w-6 bg-accent-on-cream" />
-            New book &middot; {site.publishMonth}
+            Now available
           </p>
 
           <h1 className="text-balance text-[2.75rem] leading-[1.02] tracking-tight md:text-6xl lg:text-[4.25rem]">
@@ -60,9 +59,15 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Secondary CTA: waitlist for pre-order notification. */}
           <div className="mt-6">
-            <WaitlistButton size="md" />
+            <a
+              href="https://www.amazon.com/dp/B0H5TKL95T"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream transition hover:bg-ink-700"
+            >
+              Buy on Amazon &rarr;
+            </a>
           </div>
 
           {/* Trust strip: a hairline-bordered row of mini-stats. Reads
@@ -98,8 +103,15 @@ export function Hero() {
               the real URL and update the copy from "Available soon" to
               "Available on" or "Pre-order on" depending on state. */}
           <p className="mt-14 text-xs font-semibold uppercase tracking-widest text-ink/65">
-            Available soon on{' '}
-            <span className="font-bold tracking-wider text-ink">AMAZON.COM</span>
+            Available on{' '}
+            <a
+              href="https://www.amazon.com/dp/B0H5TKL95T"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold tracking-wider text-ink underline decoration-accent-on-cream underline-offset-4 hover:text-accent-on-cream"
+            >
+              AMAZON.COM
+            </a>
           </p>
         </motion.div>
 
