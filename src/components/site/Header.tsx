@@ -3,11 +3,21 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { site } from '@/lib/site';
-import { WaitlistButton } from './WaitlistButton';
+
+// Shared pill styling for the "Buy on Amazon" CTA, matching the small
+// button size used previously by the waitlist trigger.
+const ctaClasses =
+  'inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-cream transition hover:bg-ink-700';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Amazon product URL lives in site config (retailers). Falls back to the
+  // canonical product link if the Amazon entry is ever renamed/removed.
+  const amazonUrl =
+    site.retailers.find((r) => r.name === 'Amazon')?.url ??
+    'https://www.amazon.com/dp/B0H5TKL95T';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -47,7 +57,14 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <WaitlistButton size="sm" />
+          <a
+            href={amazonUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={ctaClasses}
+          >
+            Buy on Amazon
+          </a>
         </div>
 
         <button
@@ -87,7 +104,15 @@ export function Header() {
                 </li>
               ))}
               <li className="mt-2">
-                <WaitlistButton size="sm" />
+                <a
+                  href={amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={ctaClasses}
+                  onClick={() => setOpen(false)}
+                >
+                  Buy on Amazon
+                </a>
               </li>
             </ul>
           </nav>
