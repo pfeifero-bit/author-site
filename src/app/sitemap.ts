@@ -12,6 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/for-nonprofits`,            lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/for-companies-and-funders`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/the-book`,                  lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/case-studies`,              lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/ai-policy-template`,        lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/nonprofit-ai-use-policy-template`, lastModified: now, changeFrequency: 'yearly', priority: 0.6 },
     // /work-with-us only listed when the live flag is on. Otherwise the
     // route returns 404 (or 301s to /speaking per next.config.mjs), and
     // its indexed-URL history is preserved via the 301 chain.

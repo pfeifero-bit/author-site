@@ -44,6 +44,9 @@ function buildLlmsTxt(): string {
   lines.push(`- [For Nonprofits](${site.url}/for-nonprofits): Workshops, sprints, and coaching for development teams. The AI Fundraising Sprint runs ~6 weeks.`);
   lines.push(`- [For Companies & Funders](${site.url}/for-companies-and-funders): Advisory for AI + fundraising-technology companies, platforms, and funders. Advisory Sprint (6–8 weeks), standing advisor, grantee cohorts, portfolio strategy. Conducted independently of Dale's role at Giving Compass.`);
   lines.push(`- [The Book](${site.url}/the-book): Book details, sample chapter, key topics, FAQ.`);
+  lines.push(`- [Case Studies](${site.url}/case-studies): Twelve documented nonprofit AI case studies. Save the Children Australia +18% response, Make-A-Wish Arizona $3.3M at 122% of goal, Center for Victims of Torture 150+ grants, plus nine more.`);
+  lines.push(`- [AI Policy Template](${site.url}/ai-policy-template): Free eight-section template for a nonprofit AI use policy. Covers purpose, approved uses, human review, donor data, disclosure, tool approval, ownership, review cadence.`);
+  lines.push(`- [Full Policy Template](${site.url}/nonprofit-ai-use-policy-template): The full fill-in-the-blank template document, printable to PDF.`);
   // /work-with-us only listed when the live flag is on. Otherwise the
   // page 301-redirects to /speaking via next.config.mjs.
   if (WORK_WITH_US_LIVE) {
