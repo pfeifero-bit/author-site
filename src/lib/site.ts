@@ -94,6 +94,65 @@ export const site = {
     ...(WORK_WITH_US_LIVE ? [{ href: '/work-with-us', label: 'Work with us' }] : []),
     { href: '/contact', label: 'Contact' },
   ],
+
+  /**
+   * Contact channel used by every mailto CTA introduced in P3/P4.
+   * `subjects` are the triage labels documented in the handoff so all
+   * inbound mail is routable to the right pile.
+   */
+  contact: {
+    email: 'dale@aifundraisingfornonprofits.com',
+    subjects: {
+      speaking:     'Speaking enquiry',
+      nonprofit:    'Nonprofit program enquiry',
+      advisory:     'Advisory enquiry',
+      contact:      'Website contact',
+      chapterOne:   'Chapter 1 request',
+      aiPolicy:     'AI policy template request',
+      subscribe:    'Subscribe to The Dispatch',
+    },
+  },
+
+  /**
+   * Foreword endorsements. Sourced from the printed paperback wrap and
+   * from the handoff brief. Reused across /for-nonprofits and
+   * /for-companies-and-funders (both surface the same three names) and
+   * kept here so the wording stays consistent.
+   */
+  endorsements: [
+    {
+      quote:
+        'A practical and ethical approach that fundraisers need right now.',
+      name: 'Beth Kanter',
+      title: 'Co-Author, The Smart Nonprofit',
+    },
+    {
+      quote:
+        'Teams that follow her advice on governance and keeping humans in the loop will raise more while keeping trust.',
+      name: 'Jim Fruchterman',
+      title: 'Founder, Tech Matters',
+    },
+    {
+      quote:
+        'A practical, honest, and deeply human guide for leaders who know AI is here but aren’t sure where to start.',
+      name: 'Victoria Vrana',
+      title: 'CEO, GlobalGiving',
+    },
+  ],
 };
+
+/**
+ * Helper: build a mailto: URL with a URL-encoded subject line.
+ *
+ * Every CTA on the new site — speaking, program, advisory, chapter 1,
+ * AI-policy template, general contact, dispatch subscribe — routes to
+ * dale@aifundraisingfornonprofits.com with a per-topic subject so the
+ * mailbox is triageable at a glance.
+ */
+export function mailto(subject: keyof typeof site.contact.subjects): string {
+  return `mailto:${site.contact.email}?subject=${encodeURIComponent(
+    site.contact.subjects[subject],
+  )}`;
+}
 
 export type SiteConfig = typeof site;
