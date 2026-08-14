@@ -54,6 +54,14 @@ const nextConfig = {
       { source: '/blog', destination: '/insights', statusCode: 301 },
       { source: '/blog.html', destination: '/insights', statusCode: 301 },
       { source: '/articles', destination: '/insights', statusCode: 301 },
+
+      // Retired /work-with-us route. The offering it described (advisory
+      // work) now lives on /speaking + upcoming /for-nonprofits and
+      // /for-companies-and-funders. /speaking is the closest single
+      // destination and is being restored in the site restructure. Handles
+      // both the bare URL and any deeper path.
+      { source: '/work-with-us', destination: '/speaking', statusCode: 301 },
+      { source: '/work-with-us/:path*', destination: '/speaking', statusCode: 301 },
     ];
   },
 };

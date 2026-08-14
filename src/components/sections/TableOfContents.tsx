@@ -45,7 +45,7 @@ const parts: Part[] = [
       { number: 12, title: 'AI in Daily Practice. Preserving Judgment at Scale', caseStudy: 'Practice at scale without chaos' },
       { number: 13, title: 'AI Implementation. From Pilot to Practice', caseStudy: 'Building an ethical AI use policy' },
       { number: 14, title: 'Measuring ROI. Proving the Value of AI in Fundraising', caseStudy: 'Intelligent ask amounts increase gift size and conversion' },
-      { number: 15, title: 'AI and Small Teams. Using AI Without a Technology Department', caseStudy: 'oneMESSAGE.tv, with Keela' },
+      { number: 15, title: 'AI and Small Teams. Using AI Without a Technology Department', caseStudy: 'Suncoast Humane Society, small-team lapsed-donor campaign' },
     ],
   },
 ];
@@ -61,7 +61,7 @@ export function TableOfContents() {
           id="toc"
           className="mt-4 text-balance text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl"
         >
-          Three parts. Fifteen chapters. Eleven case studies.
+          Three parts. Fifteen chapters. Twelve case studies.
         </h2>
         <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-ink/70">
           The book opens with a foreword by{' '}

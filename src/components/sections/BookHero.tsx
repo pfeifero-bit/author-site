@@ -30,7 +30,7 @@ export function BookHero() {
           </p>
 
           <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-ink/70 md:text-lg">
-            Three parts. Fifteen chapters. Eleven named case studies. A working playbook for
+            Three parts. Fifteen chapters. Twelve named case studies. A working playbook for
             nonprofit leaders who want clear judgment in the age of AI, not faster versions of the
             wrong work.
           </p>

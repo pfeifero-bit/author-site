@@ -24,7 +24,8 @@ export function PullQuote() {
           <span className="font-extrabold text-accent-on-cream">judgment</span> lives.
         </blockquote>
         <figcaption className="mt-6 text-sm text-ink/70">
-          From Chapter 1, <span className="font-medium">Why Judgment Is Becoming the Differentiator</span>.
+          From the book&rsquo;s conclusion. Chapter 1 opens the argument:{' '}
+          <span className="font-medium">Why Judgment Is Becoming the Differentiator</span>.
         </figcaption>
       </motion.figure>
     </section>

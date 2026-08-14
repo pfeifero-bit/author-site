@@ -13,17 +13,17 @@ type Case = {
 const cases: Case[] = [
   {
     organization: 'Save the Children Australia',
-    metric: '3×',
-    metricCaption: 'upgrade conversion vs. control',
-    body: 'Predictive modeling on the existing donor base ranked supporters by upgrade readiness. Targeted outreach to the highest-propensity segments converted at three times the rate of the control group, with no increase in appeal volume.',
+    metric: '+18%',
+    metricCaption: 'response rate vs. traditional segmentation',
+    body: 'Predictive modeling ranked existing donors by upgrade readiness. Targeted outreach to the highest-propensity segments generated an 18% response-rate lift over the organization’s traditional RFV segmentation, with more gifts from fewer mail pieces sent.',
     source: 'Chapter 7. With Dataro.',
   },
   {
-    organization: 'oneMESSAGE.tv',
-    metric: '+56%',
-    metricCaption: 'fundraising revenue, year one',
-    body: 'A small team unified donor management on Keela and turned on Smart Ask. Within twelve months: 56% revenue growth, 108% more donors acquired, 260% more recurring donors, and a 39% email open rate against a 17% benchmark.',
-    source: 'Chapter 15. With Keela.',
+    organization: 'Make-A-Wish Arizona',
+    metric: '$3.3M',
+    metricCaption: 'raised at the 2025 Wish Ball, 122% of goal',
+    body: 'The team consolidated the full event lifecycle on OneCause. The 2025 Wish Ball raised $3.3M, driven by a $2M paddle raise for Fund-A-Wish, $526,000 in auctions, and $80,000 in pre-event bidding. Check-in time for nearly a thousand guests dropped by 30 minutes.',
+    source: 'Chapter 11. With OneCause (Bonterra).',
   },
   {
     organization: 'Center for Victims of Torture',
@@ -46,7 +46,7 @@ export function CaseStudies() {
             id="inside-the-book"
             className="mt-4 text-balance text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl"
           >
-            Eleven case studies. Real teams. Specific results.
+            Twelve case studies. Real teams. Specific results.
           </h2>
           <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-ink/70">
             Each chapter pairs a working framework with a named organization that tested it. No
@@ -87,9 +87,9 @@ export function CaseStudies() {
         </div>
 
         <p className="mt-10 text-sm text-ink/75">
-          Plus eight more, including Make-A-Wish&rsquo;s 2025 Wish Ball, ethical AI translation in
-          humanitarian response, and a one-person nonprofit that reactivated more than fifty
-          lapsed donors in two weeks.
+          Plus nine more, including ethical AI translation for 609,000-plus refugees, a
+          $1M Bloomerang Penny match at Joe Nuxhall Miracle League Fields, and SBP&rsquo;s
+          GoFundMe Pro predictive-ask lift of 66% on average one-time gifts.
         </p>
       </div>
     </section>
