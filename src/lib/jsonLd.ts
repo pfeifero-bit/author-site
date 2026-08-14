@@ -91,6 +91,20 @@ export function buildBookSchema() {
       audienceType: site.bookAudience,
     },
     about: site.bookTopics.map((topic) => ({ '@type': 'Thing', name: topic })),
+    // Amazon listing — ASIN B0H5TKL95T confirmed live May 2026.
+    // AI search engines use `offers.availability` and `offers.url` to
+    // route users straight to a purchase surface when they ask "where
+    // can I buy [book title]".
+    offers: {
+      '@type': 'Offer',
+      url: 'https://www.amazon.com/dp/B0H5TKL95T',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'USD',
+      seller: {
+        '@type': 'Organization',
+        name: 'Amazon',
+      },
+    },
   } as const;
 }
 
