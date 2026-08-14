@@ -85,15 +85,46 @@ export const site = {
     { name: 'Bookshop.org', url: '#' },
     { name: 'Audible', url: '#' },
   ],
+  /**
+   * Primary header nav. Order matches the handoff spec: audience-first
+   * (For Nonprofits) before topic (Speaking, The Book) before resource
+   * (AI Policy Template) before Contact. /about and /insights are still
+   * indexed but live in the footer rather than the primary header nav.
+   */
   nav: [
-    { href: '/the-book', label: 'The Book' },
-    { href: '/about', label: 'About' },
-    { href: '/insights', label: 'Insights' },
+    { href: '/for-nonprofits',    label: 'For Nonprofits' },
+    { href: '/speaking',          label: 'Speaking' },
+    { href: '/the-book',          label: 'The Book' },
+    { href: '/ai-policy-template', label: 'AI Policy Template' },
+    { href: '/contact',           label: 'Contact' },
     // /work-with-us is only surfaced in nav when the live flag is on.
-    // See WORK_WITH_US_LIVE export above.
+    // In every other case the route 301-redirects to /speaking.
     ...(WORK_WITH_US_LIVE ? [{ href: '/work-with-us', label: 'Work with us' }] : []),
-    { href: '/contact', label: 'Contact' },
   ],
+
+  /**
+   * Full site link map used in the footer. Broader than `nav` on
+   * purpose — footer surfaces every page (including About, Case
+   * Studies, and For Companies & Funders that aren't in the header).
+   */
+  footerNav: {
+    site: [
+      { href: '/speaking',                  label: 'Speaking' },
+      { href: '/for-nonprofits',            label: 'For Nonprofits' },
+      { href: '/for-companies-and-funders', label: 'For Companies & Funders' },
+      { href: '/the-book',                  label: 'The Book' },
+      { href: '/case-studies',              label: 'Case Studies' },
+      { href: '/ai-policy-template',        label: 'AI Policy Template' },
+      { href: '/about',                     label: 'About' },
+      { href: '/contact',                   label: 'Contact' },
+    ],
+    connect: [
+      { href: 'https://www.linkedin.com/in/dalepfeifer/', label: 'LinkedIn',        external: true },
+      { href: 'https://givingcompass.org',                label: 'Giving Compass',  external: true },
+      { href: '/press',                                   label: 'Press & Media',   external: false },
+      { href: 'https://www.amazon.com/dp/B0H5TKL95T',     label: 'Buy on Amazon',   external: true },
+    ],
+  },
 
   /**
    * Contact channel used by every mailto CTA introduced in P3/P4.
