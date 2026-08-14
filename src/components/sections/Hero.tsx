@@ -10,7 +10,7 @@ import { ChapterOneForm } from '@/components/site/ChapterOneForm';
 // Keep in sync if scope changes.
 const TRUST_STATS: { value: string; label: string }[] = [
   { value: '15', label: 'chapters' },
-  { value: '11', label: 'case studies' },
+  { value: '12', label: 'case studies' },
   { value: '2026', label: 'platform landscape' },
 ];
 

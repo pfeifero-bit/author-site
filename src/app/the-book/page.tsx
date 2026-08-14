@@ -14,7 +14,7 @@ import { bookFaq } from '@/lib/bookFaq';
 export const metadata = buildMetadata({
   title: 'The Book | Artificial Intelligence for Nonprofit Fundraising',
   description:
-    'Eleven case studies, named teams, specific results. The practical AI playbook for fundraisers and nonprofit leaders. Publishing June 2026.',
+    'Twelve case studies, named teams, specific results. The practical AI playbook for fundraisers and nonprofit leaders. Publishing June 2026.',
   url: `${site.url}/the-book`,
   ogType: 'book',
 });
