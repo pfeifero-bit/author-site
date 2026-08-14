@@ -31,6 +31,7 @@ export function Eyebrow({
   as: Tag = 'p',
   className = '',
   style,
+  id,
 }: {
   children: React.ReactNode;
   surface?: EyebrowSurface;
@@ -38,10 +39,13 @@ export function Eyebrow({
   as?: 'p' | 'span' | 'h2' | 'h3';
   className?: string;
   style?: CSSProperties;
+  /** DOM id, useful when the eyebrow labels a `<section aria-labelledby>`. */
+  id?: string;
 }) {
   const s = surfaceStyle[surface];
   return (
     <Tag
+      id={id}
       className={`flex items-center gap-3 font-body text-[12.5px] font-semibold uppercase leading-none tracking-eyebrow ${s.label} ${className}`}
       style={style}
     >
