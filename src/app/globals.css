@@ -3,9 +3,30 @@
 @tailwind utilities;
 
 :root {
+  /* Legacy tokens — still consumed by pre-P3 surfaces. Retire when P3-P7
+     migrations remove the last `bg-ink` / `text-cream` / `text-accent-*`
+     references. Do NOT use these in new work. */
   --ink: #151a2d;
   --cream: #f7f3ec;
   --accent: #5b7000;
+
+  /* NEW brand palette (P2) — sampled from the printed book cover.
+     Prefer these in every P3+ surface. Tailwind exposes the same values
+     via `bg-indigo`, `text-chartreuse`, `bg-ivory`, etc. */
+  --indigo-base:     #181A3A;
+  --indigo-elevated: #232656;
+  --indigo-lifted:   #2F3370;
+  --chartreuse:      #E1F64D;
+  --chartreuse-hover:#ECFF70;
+  --periwinkle:      #C0D8FF;
+  --ivory:           #FAF9F0;
+  --on-dark:         #F1F3FF;
+  --on-dark-muted:   #AAB4DA;
+  --olive:           #6E7A2E;
+  --on-ivory:        #3A3F63;
+  --on-ivory-muted:  #4B5175;
+  --hairline-on-dark: rgba(192, 216, 255, 0.18);
+  --card-border-on-ivory: rgba(24, 26, 58, 0.08);
 }
 
 @layer base {
@@ -21,15 +42,31 @@
     color: var(--ink);
   }
 
+  /* Text selection: chartreuse on indigo — matches the handoff and the
+     book cover's accent. Applies globally; readable on any bg. */
   ::selection {
-    background-color: var(--accent);
-    color: var(--cream);
+    background-color: var(--chartreuse);
+    color: var(--indigo-base);
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--chartreuse);
     outline-offset: 2px;
     border-radius: 2px;
+  }
+
+  /* Respect reduced-motion. Kills the ambient cover float, glow pulse,
+     and any other declarative animation for users who opt out (Windows
+     'reduce motion' setting, macOS Reduce Motion, iOS accessibility).
+     The animations remain defined in tailwind.config.ts — this just
+     disables them for people who asked for that. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   /* Display defaults: Mulish, tight letter-spacing for headlines */
