@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Mulish } from 'next/font/google';
+import { Mulish, Bricolage_Grotesque, Source_Sans_3, Newsreader } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/site/Header';
 import { Footer } from '@/components/site/Footer';
@@ -13,14 +13,45 @@ import {
   jsonLdScript,
 } from '@/lib/jsonLd';
 
-// Single family across display and body, matching the book cover.
-// If the designer used Manrope, Plus Jakarta Sans, or Hanken Grotesk
-// instead, swap the import and the variable name in tailwind.config.ts.
+/* LEGACY (Mulish) — still used by pre-P3 pages via `font-sans` /
+ * `font-display` in tailwind.config.ts. Remove once P3-P7 migrate all
+ * surfaces to the new type system below. */
 const mulish = Mulish({
   subsets: ['latin'],
   variable: '--font-mulish',
   display: 'swap',
   weight: ['300', '400', '500', '600', '700', '800', '900'],
+});
+
+/* NEW TYPE SYSTEM (P2, from handoff brief).
+ * Three families, referenced via CSS vars set on <html>. Each `variable`
+ * matches the `fontFamily` entry in tailwind.config.ts so a component
+ * can use `font-heading`, `font-body`, or `font-serif-italic`.
+ *
+ * All three are Google Fonts. `display: swap` shows a fallback until
+ * the webfont downloads, avoiding a FOIT. `preload: false` on the
+ * legacy Mulish means we don't preload two body-font stacks at once.
+ */
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-bricolage',
+  display: 'swap',
+  weight: ['600', '700', '800'],
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ['latin'],
+  variable: '--font-source-sans',
+  display: 'swap',
+  weight: ['400', '600', '700'],
+});
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-newsreader',
+  display: 'swap',
+  style: ['italic'],
+  weight: ['400', '500'],
 });
 
 // Site-wide social-share card. Generated typographic OG image at
@@ -78,7 +109,10 @@ const organizationSchema = buildOrganizationSchema();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={mulish.variable}>
+    <html
+      lang="en"
+      className={`${mulish.variable} ${bricolage.variable} ${sourceSans.variable} ${newsreader.variable}`}
+    >
       <body className="font-sans bg-cream text-ink antialiased">
         <a href="#main" className="skip-link">Skip to main content</a>
         <Header />
