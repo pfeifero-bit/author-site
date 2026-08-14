@@ -49,9 +49,10 @@ function buildLlmsTxt(): string {
   if (WORK_WITH_US_LIVE) {
     lines.push(`- [Work with us](${site.url}/work-with-us): Advisory work with ${site.author.name}. AI fundraising strategy, governance, and adoption for nonprofits, foundations, and philanthropy platforms. Includes FAQ.`);
   }
-  lines.push(`- [About](${site.url}/about): Full bio of ${site.author.name}.`);
+  lines.push(`- [About](${site.url}/about): Full bio of ${site.author.name}. Speaker, author, and advisor. CEO of Giving Compass. Co-founder of Goodworld.`);
+  lines.push(`- [Press & Media](${site.url}/press): Downloadable headshot, book cover, and one-line description. Contact for interview and review copy requests.`);
   lines.push(`- [Insights](${site.url}/insights): Field notes on AI and philanthropy.`);
-  lines.push(`- [Contact](${site.url}/contact): Press and general inquiries.`);
+  lines.push(`- [Contact](${site.url}/contact): Email dale@aifundraisingfornonprofits.com — response within three business days.`);
   lines.push('');
 
   lines.push('## Topics covered');
