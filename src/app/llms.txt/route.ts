@@ -39,10 +39,13 @@ function buildLlmsTxt(): string {
 
   lines.push('## Core pages');
   lines.push('');
-  lines.push(`- [Home](${site.url}/): Overview, free Chapter 1 download, author bio.`);
+  lines.push(`- [Home](${site.url}/): Advisor, speaker, and author overview. Fork by buyer type.`);
+  lines.push(`- [Speaking](${site.url}/speaking): Keynotes and panels. Three signature talks — The Invisible Middle, Where Judgment Lives, The Trust Test. Formats include keynote (30–45 min), panel, board session, and 90-minute workshop. Select sessions are CFRE-accredited.`);
+  lines.push(`- [For Nonprofits](${site.url}/for-nonprofits): Workshops, sprints, and coaching for development teams. The AI Fundraising Sprint runs ~6 weeks.`);
+  lines.push(`- [For Companies & Funders](${site.url}/for-companies-and-funders): Advisory for AI + fundraising-technology companies, platforms, and funders. Advisory Sprint (6–8 weeks), standing advisor, grantee cohorts, portfolio strategy. Conducted independently of Dale's role at Giving Compass.`);
   lines.push(`- [The Book](${site.url}/the-book): Book details, sample chapter, key topics, FAQ.`);
-  // /work-with-us only listed when the live flag is on. When off, the
-  // page returns 404 and is disallowed in robots.txt.
+  // /work-with-us only listed when the live flag is on. Otherwise the
+  // page 301-redirects to /speaking via next.config.mjs.
   if (WORK_WITH_US_LIVE) {
     lines.push(`- [Work with us](${site.url}/work-with-us): Advisory work with ${site.author.name}. AI fundraising strategy, governance, and adoption for nonprofits, foundations, and philanthropy platforms. Includes FAQ.`);
   }
@@ -75,7 +78,7 @@ function buildLlmsTxt(): string {
   );
   lines.push('');
   lines.push(
-    `Visitors can request the chapter via the homepage form, which delivers it by email and adds them to the monthly dispatch list.`,
+    `Request the chapter by emailing ${site.contact.email} with the subject "${site.contact.subjects.chapterOne}".`,
   );
   lines.push('');
 
