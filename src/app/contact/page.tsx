@@ -24,7 +24,7 @@ export const metadata: Metadata = buildMetadata({
 const REFERENCES: { label: string; value: string; href: string }[] = [
   {
     label: 'LinkedIn',
-    value: '@dalepfeifer',
+    value: '@dale-pfeifer',
     href: site.author.linkedin,
   },
   {

@@ -76,7 +76,7 @@ export const site = {
   author: {
     name: 'Dale Nirvani Pfeifer',
     role: 'CEO, Giving Compass',
-    linkedin: 'https://www.linkedin.com/in/dalepfeifer/',
+    linkedin: 'https://www.linkedin.com/in/dale-pfeifer/',
     company: { name: 'Giving Compass', url: 'https://givingcompass.org' },
   },
   retailers: [
@@ -119,7 +119,7 @@ export const site = {
       { href: '/contact',                   label: 'Contact' },
     ],
     connect: [
-      { href: 'https://www.linkedin.com/in/dalepfeifer/', label: 'LinkedIn',        external: true },
+      { href: 'https://www.linkedin.com/in/dale-pfeifer/', label: 'LinkedIn',        external: true },
       { href: 'https://givingcompass.org',                label: 'Giving Compass',  external: true },
       { href: '/press',                                   label: 'Press & Media',   external: false },
       { href: 'https://www.amazon.com/dp/B0H5TKL95T',     label: 'Buy on Amazon',   external: true },
