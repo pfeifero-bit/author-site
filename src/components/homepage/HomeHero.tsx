@@ -20,8 +20,9 @@ import { site } from '@/lib/site';
  * globals.css when the user opts out).
  */
 
-const CHAPTER_ONE_MAILTO =
-  'mailto:dale@aifundraisingfornonprofits.com?subject=Chapter%201%20request';
+// Secondary CTA scrolls to the Kit signup form further down the page,
+// rather than opening a mailto. Anchor matches the id on HomeChapter1.
+const CHAPTER_ONE_ANCHOR = '#chapter-one-request';
 
 export function HomeHero() {
   return (
@@ -93,12 +94,12 @@ export function HomeHero() {
             >
               Work with Dale
             </Link>
-            <a
-              href={CHAPTER_ONE_MAILTO}
+            <Link
+              href={CHAPTER_ONE_ANCHOR}
               className="inline-flex items-center rounded-pill border border-[color:var(--hairline-on-dark)] bg-white/[0.03] px-6 py-[15px] font-body text-base font-semibold text-on-dark transition hover:border-white/35"
             >
               Get Chapter 1 Free
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -110,12 +110,12 @@ export default function BookPage() {
                 >
                   Buy on Amazon <span aria-hidden className="ml-2">&rarr;</span>
                 </a>
-                <a
-                  href={mailto('chapterOne')}
+                <Link
+                  href="/#chapter-one-request"
                   className="inline-flex items-center rounded-pill border border-[color:var(--hairline-on-dark)] bg-white/[0.03] px-6 py-4 font-body text-base font-semibold text-on-dark transition hover:border-white/35"
                 >
                   Get Chapter 1 Free
-                </a>
+                </Link>
               </div>
             </div>
             <div className="flex justify-center">

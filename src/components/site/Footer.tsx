@@ -1,5 +1,13 @@
 import Link from 'next/link';
-import { site, mailto } from '@/lib/site';
+import { site } from '@/lib/site';
+import { KitForm } from '@/components/site/KitForm';
+
+// Kit form for The Dispatch newsletter. Grab a new value from Kit
+// dashboard if the form changes (Grow → Landing pages & forms →
+// select form → Publish → JavaScript).
+const KIT_DISPATCH_UID = 'e504d52d42';
+const KIT_DISPATCH_SRC =
+  'https://ai-fundraising-for-nonprofits.kit.com/e504d52d42/index.js';
 
 /**
  * Site footer (P7 rebuild).
@@ -110,7 +118,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* The Dispatch */}
+          {/* The Dispatch — Kit-powered signup */}
           <div>
             <p className="font-body text-[11px] font-semibold uppercase tracking-eyebrow-wide text-on-dark">
               The Dispatch
@@ -118,12 +126,13 @@ export function Footer() {
             <p className="mt-5 font-body text-[14px] leading-prose text-on-dark-muted">
               One thoughtful note a month on AI and philanthropy.
             </p>
-            <a
-              href={mailto('subscribe')}
-              className="mt-5 inline-flex items-center rounded-pill bg-chartreuse px-5 py-[10px] font-body text-[13.5px] font-bold text-indigo-base transition hover:bg-chartreuse-hover"
-            >
-              Email to subscribe
-            </a>
+            <div className="mt-5">
+              <KitForm
+                uid={KIT_DISPATCH_UID}
+                src={KIT_DISPATCH_SRC}
+                label="Subscribe to The Dispatch, a monthly newsletter on AI and philanthropy"
+              />
+            </div>
           </div>
         </div>
 
