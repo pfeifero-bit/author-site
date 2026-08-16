@@ -79,11 +79,11 @@ export const site = {
     linkedin: 'https://www.linkedin.com/in/dale-pfeifer/',
     company: { name: 'Giving Compass', url: 'https://givingcompass.org' },
   },
+  // Only Amazon has a live retail URL today. When BN / Bookshop.org /
+  // Audible go live, add them here — every component that renders
+  // retailers filters this list, so partial coverage is fine.
   retailers: [
     { name: 'Amazon', url: 'https://www.amazon.com/dp/B0H5TKL95T' },
-    { name: 'Barnes & Noble', url: '#' },
-    { name: 'Bookshop.org', url: '#' },
-    { name: 'Audible', url: '#' },
   ],
   /**
    * Primary header nav. Order matches the handoff spec: audience-first
@@ -138,9 +138,8 @@ export const site = {
       nonprofit:    'Nonprofit program enquiry',
       advisory:     'Advisory enquiry',
       contact:      'Website contact',
-      chapterOne:   'Chapter 1 request',
+      bulk:         'Bulk book order inquiry',
       aiPolicy:     'AI policy template request',
-      subscribe:    'Subscribe to The Dispatch',
     },
   },
 

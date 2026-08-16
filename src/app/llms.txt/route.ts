@@ -31,7 +31,7 @@ function buildLlmsTxt(): string {
   lines.push(`> ${site.description}`);
   lines.push('');
   lines.push(
-    `This site is the official home of *${site.bookTitle}* (${site.bookSubtitle}) by ${site.author.name}, ${site.author.role}. Publishing ${site.publishMonth}.`,
+    `This site is the official home of *${site.bookTitle}* (${site.bookSubtitle}) by ${site.author.name}, ${site.author.role}. Published ${site.publishMonth}.`,
   );
   lines.push('');
   lines.push(`Author bio: ${site.authorBio}`);
@@ -82,7 +82,7 @@ function buildLlmsTxt(): string {
   );
   lines.push('');
   lines.push(
-    `Request the chapter by emailing ${site.contact.email} with the subject "${site.contact.subjects.chapterOne}".`,
+    `Sign up to receive Chapter 1 through the short form on the homepage: ${site.url}/#chapter-one-request. Kit sends the PDF automatically.`,
   );
   lines.push('');
 

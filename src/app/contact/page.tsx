@@ -11,7 +11,11 @@ import { buildMetadata } from '@/lib/seo';
  *   - Header block: "Get in touch." + intro
  *   - Email address rendered as large prominent copyable text
  *   - Primary mailto CTA
- *   - Reference rows: LinkedIn, Giving Compass, Newsletter (The Dispatch)
+ *   - Reference rows: LinkedIn, Giving Compass
+ *
+ * The Dispatch newsletter row used to live here as a mailto row, but the
+ * footer now carries a Kit signup form on every page (including this one),
+ * so keeping it here duplicated the same call-to-action twice.
  */
 
 export const metadata: Metadata = buildMetadata({
@@ -24,18 +28,13 @@ export const metadata: Metadata = buildMetadata({
 const REFERENCES: { label: string; value: string; href: string }[] = [
   {
     label: 'LinkedIn',
-    value: '@dale-pfeifer',
+    value: 'linkedin.com/in/dale-pfeifer',
     href: site.author.linkedin,
   },
   {
     label: 'Giving Compass',
     value: 'givingcompass.org',
     href: site.author.company.url,
-  },
-  {
-    label: 'Newsletter',
-    value: 'The Dispatch, monthly',
-    href: mailto('subscribe'),
   },
 ];
 

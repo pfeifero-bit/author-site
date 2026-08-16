@@ -311,7 +311,7 @@ export default function BookPage() {
             </li>
             <li>
               <Link
-                href={mailto('contact')}
+                href={mailto('bulk')}
                 className="block rounded-card border border-[color:var(--hairline-on-dark)] bg-indigo-elevated p-8 transition duration-[250ms] ease-card hover:-translate-y-1 hover:border-chartreuse/50 hover:shadow-[0_18px_40px_-22px_rgba(0,0,0,0.5)]"
               >
                 <h3 className="font-heading text-xl font-bold leading-subhead tracking-micro-tight text-on-dark">

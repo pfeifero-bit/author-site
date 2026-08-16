@@ -10,21 +10,22 @@ const KIT_DISPATCH_SRC =
   'https://ai-fundraising-for-nonprofits.kit.com/e504d52d42/index.js';
 
 /**
- * Site footer (P7 rebuild).
+ * Site footer (P7 rebuild, later updated for Kit).
  *
- * From the handoff:
- *   Four columns (1.4fr / 1fr / 1fr / 1.2fr). Identity block with the
- *   wordmark and the line "Author of Artificial Intelligence for
- *   Nonprofit Fundraising. CEO of Giving Compass. Keynote speaker on
- *   AI and the future of giving." Site column, Connect column
- *   (LinkedIn, Giving Compass, Press & Media, Buy on Amazon), and The
- *   Dispatch column with the mailto subscribe button. Bottom row:
- *   copyright left, "Built quietly. Updated thoughtfully." in
- *   Newsreader italic right.
+ * Four columns (1.4fr / 1fr / 1fr / 1.2fr):
+ *   1. Identity — wordmark + "Author of Artificial Intelligence for
+ *      Nonprofit Fundraising. CEO of Giving Compass. Keynote speaker
+ *      on AI and the future of giving."
+ *   2. Site — every page (broader than the header nav)
+ *   3. Connect — LinkedIn, Giving Compass, Press & Media, Buy on Amazon
+ *   4. The Dispatch — a Kit-powered signup form (see KitForm)
  *
- * No form: the old email input for The Dispatch was the last form on
- * the site; per handoff it is replaced with a mailto to
- * dale@aifundraisingfornonprofits.com subject "Subscribe to The Dispatch".
+ * Bottom row: copyright left, "Built quietly. Updated thoughtfully."
+ * in Newsreader italic right.
+ *
+ * The Dispatch column previously used a mailto subscribe button, then
+ * became a Kit inline form; the Kit form UID lives in a constant at the
+ * top of this file for easy swaps from the Kit dashboard.
  */
 
 const YEAR = 2026;

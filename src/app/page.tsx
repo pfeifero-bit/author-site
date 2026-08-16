@@ -18,12 +18,7 @@ import { buildMetadata } from '@/lib/seo';
  *   3. Thesis pull quote   indigo   Newsreader italic
  *   4. Case studies        ivory    ← the ivory beat
  *   5. Ways to work        indigo   three ElevatedCard routes
- *   6. Chapter 1 request   indigo   mailto CTA (no form)
- *
- * Retired from the homepage (still used elsewhere):
- *   - `<Endorsement />`, `<SampleChapter />` remain in /the-book but are
- *     no longer on the homepage. The new HomeCaseStudies + HomeChapter1
- *     cover their jobs on this surface.
+ *   6. Chapter 1 request   indigo   Kit signup form (delivers PDF)
  */
 
 export const metadata = buildMetadata({

@@ -63,13 +63,11 @@ export default function robots(): MetadataRoute.Robots {
 
   // Disallow list:
   //   /api/*        server endpoints, not pages.
-  //   /thank-you    post-conversion destination (also noindex via metadata).
   //   /work-with-us added when paused via WORK_WITH_US_LIVE flag so
   //                 crawlers do not index a 404 that may come back later.
   //                 Also 301-redirects to /speaking via next.config.mjs.
   const disallow = [
     '/api/',
-    '/thank-you',
     ...(WORK_WITH_US_LIVE ? [] : ['/work-with-us']),
   ];
 

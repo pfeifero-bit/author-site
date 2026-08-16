@@ -63,8 +63,8 @@ function buildRss(): string {
     <description>${escapeXml(`Field notes on AI and philanthropy by ${site.author.name}.`)}</description>
     <language>en-us</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
-    <managingEditor>noreply@aifundraisingfornonprofits.com (${escapeXml(site.author.name)})</managingEditor>
-    <webMaster>noreply@aifundraisingfornonprofits.com (${escapeXml(site.author.name)})</webMaster>
+    <managingEditor>${site.contact.email} (${escapeXml(site.author.name)})</managingEditor>
+    <webMaster>${site.contact.email} (${escapeXml(site.author.name)})</webMaster>
 ${items}
   </channel>
 </rss>`;

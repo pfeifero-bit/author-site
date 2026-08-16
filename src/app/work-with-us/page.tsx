@@ -9,7 +9,6 @@ import {
   jsonLdScript,
 } from '@/lib/jsonLd';
 import { workFaq } from '@/lib/workFaq';
-import { ChapterOneForm } from '@/components/site/ChapterOneForm';
 import { WorkInquiryForm } from '@/components/site/WorkInquiryForm';
 
 /**
@@ -97,7 +96,7 @@ export default function WorkWithUsPage() {
               <span aria-hidden>&rarr;</span>
             </Link>
             <Link
-              href="/#sample"
+              href="/#chapter-one-request"
               className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink/60"
             >
               Read Chapter 1 free
@@ -508,11 +507,16 @@ export default function WorkWithUsPage() {
               and get the monthly dispatch on AI and philanthropy.
             </p>
             <div className="mt-5 max-w-xl">
-              <ChapterOneForm
-                variant="cream"
-                buttonLabel="Send me Chapter 1"
-                source="work-with-us"
-              />
+              {/* Chapter 1 signup now goes through the homepage Kit form
+                  (id="chapter-one-request"), same as every other Chapter 1
+                  CTA sitewide. Kit's incentive email delivers the PDF. */}
+              <Link
+                href="/#chapter-one-request"
+                className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream transition hover:bg-ink-700"
+              >
+                Send me Chapter 1
+                <span aria-hidden>&rarr;</span>
+              </Link>
             </div>
           </div>
         </div>
